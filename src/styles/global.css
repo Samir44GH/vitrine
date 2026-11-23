@@ -5,6 +5,15 @@
    français (SIL OFL — voir les fichiers OFL-*.txt du même dossier).
    Familles renommées : ce sont des versions modifiées.
    Pour changer de main, une seule ligne : --font-signature, plus bas. */
+/* Cormorant SC Medium : de vraies petites capitales pour les étiquettes.
+   Le Regular casse en 11 px sur fond sombre, d'où le Medium. */
+@font-face {
+  font-family: 'Etiquettes';
+  src: url('../fonts/etiquettes-cormorant-sc.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: 'Signature Great Vibes';
   src: url('../fonts/signature-great-vibes.woff2') format('woff2');
@@ -64,6 +73,9 @@
     --font-ui: 'Inter Variable', system-ui, sans-serif;
     /* La main qui signe. L'autre choix : 'Signature Alex Brush' */
     --font-signature: 'Signature Great Vibes';
+    /* Les étiquettes du cadre de la page. Leur texte s'écrit en minuscules :
+       c'est la police qui les dessine en petites capitales. */
+    --font-label: 'Etiquettes', 'Fraunces Variable', Georgia, serif;
 
     --step--1: clamp(0.8rem, 0.77rem + 0.15vw, 0.88rem);
     --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.08rem);
@@ -199,8 +211,8 @@
   }
   .nav { display: flex; align-items: center; gap: clamp(0.6rem, 2.5vw, 1.6rem); }
   .nav a {
-    font: 500 var(--step--1) / 1 var(--font-ui); letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--ink-soft); text-decoration: none;
+    font: 500 0.95rem / 1 var(--font-label); letter-spacing: 0.05em;
+    color: var(--ink-soft); text-decoration: none;
   }
   .nav a:hover { color: var(--ink); }
 
@@ -217,8 +229,8 @@
   /* --- Étiquettes et boutons : le côté « écran » --- */
   .kicker {
     display: inline-block;
-    font: 500 var(--step--1) / 1 var(--font-ui);
-    letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+    font: 500 clamp(0.9rem, 0.85rem + 0.2vw, 1rem) / 1.3 var(--font-label);
+    letter-spacing: 0.09em; color: var(--ink-soft);
   }
 
   .pill {
@@ -334,7 +346,7 @@
 
   /* --- Page projet --- */
   .project-hero { padding-block: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem); }
-  .back { display: inline-block; margin-block-end: 1.75rem; font: 500 var(--step--1) / 1 var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; }
+  .back { display: inline-block; margin-block-end: 1.75rem; font: 500 0.95rem / 1 var(--font-label); letter-spacing: 0.05em; color: var(--ink-soft); text-decoration: none; }
   .back:hover { color: var(--ink); }
   .project-head { display: flex; gap: clamp(1rem, 3vw, 1.75rem); align-items: center; }
   .project-head .sigil { inline-size: clamp(4rem, 10vw, 5.5rem); block-size: clamp(4rem, 10vw, 5.5rem); padding: 0.85rem; border-radius: 0.8rem; }
@@ -358,7 +370,7 @@
   }
 
   .aside { display: grid; gap: 1.6rem; position: sticky; inset-block-start: 5rem; }
-  .aside h2 { font: 500 0.72rem / 1 var(--font-ui); letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-block-end: 0.7rem; }
+  .aside h2 { font: 500 0.88rem / 1 var(--font-label); letter-spacing: 0.07em; color: var(--ink-soft); margin-block-end: 0.7rem; }
   .links { display: grid; gap: 0.5rem; }
   .links .pill { justify-content: center; }
 

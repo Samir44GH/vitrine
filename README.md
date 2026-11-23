@@ -72,6 +72,14 @@ Deux textures dans `public/tex/`, en deux versions chacune (claire et sombre) :
 
 Pour en changer : repasse ton image par `scripts/prep_texture.py` (passe-haut, amplitude douce, raccords fondus), sinon elle assombrira la page et sa mosaïque se verra. Le réglage se fait par les variables `--tex-*` en haut de `global.css`.
 
+### Les étiquettes
+
+`public/fonts/etiquettes-cormorant-sc.woff2` est **Cormorant SC Medium** (9 Ko), utilisée pour les étiquettes qui encadrent la page : navigation, sur-titre, retour, titres de colonne.
+
+Ce sont de **vraies petites capitales** : leur texte s'écrit normalement, en minuscules, et c'est la police qui les dessine. Ne remets donc jamais `text-transform: uppercase` dessus, cela détruirait l'effet.
+
+Le Regular de cette famille casse en 11 px sur fond sombre ; d'où le Medium. Les étiquettes de données — index `01 / 09`, piles techniques, filtres — restent en Inter, en capitales forcées : elles sont fonctionnelles, pas ornementales, et ce contraste entre sérif et sans-sérif est ce qui tient la direction.
+
 ### La signature
 
 Deux écritures manuscrites sont installées dans `public/fonts/`, sous-ensemblées aux caractères latins et aux accents français. Licences SIL OFL jointes. Les familles CSS sont renommées, s'agissant de versions modifiées.
