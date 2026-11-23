@@ -6,10 +6,6 @@ export const site = {
   description: "Automatisations n8n assistées par IA, bots et sites web : les projets de Samir.",
   github: 'https://github.com/Samir44GH',
 
-  // Moyen de te joindre. Remplace par 'mailto:ton.adresse@exemple.fr' quand tu veux.
-  contact: 'https://github.com/Samir44GH',
-  contactLabel: 'Me contacter',
-
   hero: {
     kicker: 'Automatisation & IA — Pornichet',
     title: 'Des machines qui <em>travaillent</em> à ma place.',
