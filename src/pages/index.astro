@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { site, categories } from '../site';
+
+const projets = (await getCollection('projets')).sort(
+  (a, b) => a.data.order - b.data.order || b.data.year - a.data.year,
+);
+const present = Object.entries(categories).filter(([k]) => projets.some((p) => p.data.category === k));
+---
+<Base>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">{site.hero.eyebrow}</p>
+      <h1 set:html={site.hero.title} />
+      <p class="lead">{site.hero.lead}</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projets">Voir les projets ↓</a>
+        <a class="btn" href={site.github} rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projets" aria-labelledby="t-projets">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2 id="t-projets">Projets</h2>
+          <p>{projets.length} réalisations, des plus récentes aux plus anciennes.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrer par catégorie" id="filters" hidden>
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">Tous</button>
+          {present.map(([k, label]) => <button class="chip" type="button" data-filter={k} aria-pressed="false">{label}</button>)}
+        </div>
+      </div>
+      <ul class="grid" role="list" id="grid">
+        {projets.map((p) => (
+          <li data-category={p.data.category}><ProjectCard id={p.id} {...p.data} /></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="a-propos" aria-labelledby="t-apropos">
+    <div class="wrap about">
+      <div>
+        <h2 id="t-apropos">{site.about.title}</h2>
+        {site.about.paragraphs.map((t) => <p>{t}</p>)}
+      </div>
+      <ul class="facts" role="list">
+        {site.about.facts.map((f) => <li><strong>{f.value}</strong><span>{f.label}</span></li>)}
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Amélioration progressive : sans JavaScript, tous les projets restent visibles.
+  const bar = document.getElementById('filters');
+  const items = document.querySelectorAll<HTMLElement>('#grid > li');
+  if (bar) {
+    bar.hidden = false;
+    bar.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-filter]');
+      if (!btn) return;
+      const f = btn.dataset.filter;
+      bar.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      items.forEach((li) => (li.hidden = f !== 'all' && li.dataset.category !== f));
+    });
+  }
+</script>

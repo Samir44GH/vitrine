@@ -1,0 +1,19 @@
+---
+import { url } from '../lib';
+import { categories, statuses } from '../site';
+interface Props { id: string; title: string; summary: string; year: number; category: keyof typeof categories; status: keyof typeof statuses; stack: string[]; hue: number }
+const p = Astro.props;
+---
+<article class="card reveal">
+  <div class="cover" style={`--h:${p.hue}`} aria-hidden="true"><span>{p.title.trim().charAt(0).toUpperCase()}</span></div>
+  <div class="card-body">
+    <div class="meta">
+      <span class="badge">{categories[p.category]}</span>
+      <span class={`badge ${p.status === 'en-ligne' ? 'live' : ''}`}>{statuses[p.status]}</span>
+      <span>{p.year}</span>
+    </div>
+    <h3><a href={url(`projets/${p.id}/`)}>{p.title}</a></h3>
+    <p>{p.summary}</p>
+    {p.stack.length > 0 && <ul class="tags" role="list">{p.stack.slice(0, 4).map((s) => <li>{s}</li>)}</ul>}
+  </div>
+</article>
