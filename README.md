@@ -95,7 +95,9 @@ Le navigateur ne télécharge que celle qui sert. Pour changer de main, une seul
 --font-signature: 'Signature Alex Brush';
 ```
 
-Elle n'apparaît **qu'une fois**, au bas du « À propos » : une écriture manuscrite utilisée plus d'une fois cesse d'être une signature. Le nom signé se change dans `src/site.ts` (`signature`).
+Elle sert à deux endroits : le logotype en haut à gauche (`--font-brand`) et la signature au bas du « À propos » (`--font-signature`). Les deux sont liés par défaut ; pour les séparer, donne une autre valeur à `--font-brand`.
+
+Ailleurs, elle n'apparaît pas : une écriture manuscrite utilisée plus d'une fois cesse d'être une signature. Le nom signé se change dans `src/site.ts` (`signature`).
 
 Les signes vivent dans `src/components/Sigil.astro`. Pour en ajouter un, ajoute son dessin SVG dans ce fichier et son nom dans `src/content.config.ts`.
 

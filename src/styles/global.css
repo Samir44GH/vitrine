@@ -73,6 +73,8 @@
     --font-ui: 'Inter Variable', system-ui, sans-serif;
     /* La main qui signe. L'autre choix : 'Signature Alex Brush' */
     --font-signature: 'Signature Great Vibes';
+    /* Le logotype en haut à gauche. Découplable de la signature si besoin. */
+    --font-brand: var(--font-signature);
     /* Les étiquettes du cadre de la page. Leur texte s'écrit en minuscules :
        c'est la police qui les dessine en petites capitales. */
     --font-label: 'Etiquettes', 'Fraunces Variable', Georgia, serif;
@@ -206,8 +208,11 @@
     gap: 1rem; min-height: 3.75rem;
   }
   .brand {
-    font-family: var(--font-display); font-size: var(--step-1); text-decoration: none;
-    letter-spacing: -0.01em;
+    /* Écriture liée : pas de crénage négatif, il casserait les attaches. */
+    font-family: var(--font-brand), var(--font-display);
+    font-size: clamp(2rem, 1.7rem + 1.1vw, 2.45rem);
+    line-height: 1.1; letter-spacing: 0; text-decoration: none;
+    display: inline-block; padding-block-start: 0.1em;
   }
   .nav { display: flex; align-items: center; gap: clamp(0.6rem, 2.5vw, 1.6rem); }
   .nav a {
