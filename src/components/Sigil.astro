@@ -1,9 +1,10 @@
 ---
 // Signes gravés, un par projet. Dessins géométriques originaux.
-// Pour en ajouter un : une entrée ici, puis `sigil: <nom>` dans la fiche.
+// Pour en ajouter un : une entrée ici, puis son nom dans src/content.config.ts.
 export type SigilName =
   | 'barres' | 'cercles' | 'rayons' | 'vague'
-  | 'trame' | 'chevrons' | 'losange' | 'grille';
+  | 'trame' | 'chevrons' | 'losange' | 'grille'
+  | 'lueur' | 'refuge';
 
 interface Props { name: SigilName; class?: string }
 const { name, class: cls = '' } = Astro.props;
@@ -17,6 +18,10 @@ const paths: Record<SigilName, string> = {
   chevrons: '<path d="m8 18 16-10 16 10"/><path d="m8 28 16-10 16 10" opacity=".6"/><path d="m8 38 16-10 16 10" opacity=".3"/>',
   losange: '<rect x="11" y="11" width="26" height="26" transform="rotate(45 24 24)"/><circle cx="24" cy="24" r="5" fill="currentColor" stroke="none"/>',
   grille: '<rect x="7" y="7" width="34" height="34" rx="2"/><path d="M24 7v34M7 24h34"/>',
+  // Une lueur : le point et son halo rompu
+  lueur: '<circle cx="24" cy="24" r="5" fill="currentColor" stroke="none"/><path d="M24 8.5a15.5 15.5 0 0 1 13.4 7.7"/><path d="M37.4 31.8A15.5 15.5 0 0 1 24 39.5"/><path d="M10.6 31.8A15.5 15.5 0 0 1 10.6 16.2"/>',
+  // Un refuge : l'abri et ce qui attend dessous
+  refuge: '<path d="M7 23 24 8l17 15"/><path d="M12 23v17h24V23" opacity=".55"/><circle cx="24" cy="32" r="4.5" fill="currentColor" stroke="none"/>',
 };
 ---
 <svg
