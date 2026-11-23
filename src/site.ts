@@ -1,6 +1,6 @@
 // Textes et réglages généraux du site : tout ce qui se modifie à un seul endroit.
 export const site = {
-  name: 'Samir Allaji',
+  name: 'Samir',
   short: 'Samir',
   lang: 'fr',
   description: 'Vitrine de projets : automatisations n8n assistées par IA et sites web conçus à la main.',
