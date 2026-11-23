@@ -61,6 +61,17 @@ Mets le domaine dans `SITE_URL`, `BASE_PATH: /`, et ajoute un fichier `public/CN
 
 « Encre » : une seule matière, deux encres. En thème clair, encre noire sur papier crème ; en thème sombre, encre crème sur plaque noire. Le grain est une texture de papier en clair, un grain argentique en sombre. Tout est monochrome : ce sont les signes gravés qui portent l'œil.
 
+### Les matières
+
+Deux textures dans `public/tex/`, en deux versions chacune (claire et sombre) :
+
+| Fichier | Rôle |
+|---|---|
+| `papier.webp` · `papier-sombre.webp` | La matière de toute la page, en mosaïque de 320 px |
+| `encre.webp` · `encre-sombre.webp` | Une passe d'encre sur l'ouverture seulement, qui s'efface vers le bas |
+
+Pour en changer : repasse ton image par `scripts/prep_texture.py` (passe-haut, amplitude douce, raccords fondus), sinon elle assombrira la page et sa mosaïque se verra. Le réglage se fait par les variables `--tex-*` en haut de `global.css`.
+
 Les signes vivent dans `src/components/Sigil.astro`. Pour en ajouter un, ajoute son dessin SVG dans ce fichier et son nom dans `src/content.config.ts`.
 
 ## Ce qui est inclus

@@ -35,7 +35,11 @@
     --sigil-fg: #efe9db;
 
     --grain-blend: multiply;
-    --grain-opacity: 0.09;
+    --grain-opacity: 0.05;
+    --tex-papier: url('../tex/papier.webp');
+    --tex-encre: url('../tex/encre.webp');
+    --tex-blend: multiply;
+    --tex-encre-opacity: 0.55;
 
     --font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
     --font-ui: 'Inter Variable', system-ui, sans-serif;
@@ -65,7 +69,11 @@
       --sigil-bg: #f0ead9;
       --sigil-fg: #13110d;
       --grain-blend: screen;
-      --grain-opacity: 0.13;
+      --grain-opacity: 0.09;
+      --tex-papier: url('../tex/papier-sombre.webp');
+      --tex-encre: url('../tex/encre-sombre.webp');
+      --tex-blend: screen;
+      --tex-encre-opacity: 0.5;
     }
   }
   :root[data-theme='dark'] {
@@ -79,7 +87,11 @@
     --sigil-bg: #f0ead9;
     --sigil-fg: #13110d;
     --grain-blend: screen;
-    --grain-opacity: 0.13;
+    --grain-opacity: 0.09;
+    --tex-papier: url('../tex/papier-sombre.webp');
+    --tex-encre: url('../tex/encre-sombre.webp');
+    --tex-blend: screen;
+    --tex-encre-opacity: 0.5;
   }
 }
 
@@ -91,7 +103,11 @@
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    background: var(--paper);
+    background-color: var(--paper);
+    background-image: var(--tex-papier);
+    background-size: 320px;
+    background-attachment: fixed;
+    background-blend-mode: var(--tex-blend);
     color: var(--ink);
     font: var(--step-0) / 1.65 var(--font-ui);
     text-wrap: pretty;
@@ -204,7 +220,14 @@
   .theme-toggle svg { inline-size: 1rem; block-size: 1rem; }
 
   /* --- Ouverture : sérif centré, beaucoup de vide --- */
-  .hero { padding-block: clamp(3.5rem, 11vw, 8rem) clamp(2.5rem, 7vw, 5rem); text-align: center; }
+  .hero { position: relative; isolation: isolate; padding-block: clamp(3.5rem, 11vw, 8rem) clamp(2.5rem, 7vw, 5rem); text-align: center; }
+  /* Une passe d'encre sur l'ouverture, qui s'efface vers le bas */
+  .hero::before {
+    content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background-image: var(--tex-encre); background-size: 460px;
+    opacity: var(--tex-encre-opacity); mix-blend-mode: var(--tex-blend);
+    mask-image: linear-gradient(to bottom, #000 25%, transparent 92%);
+  }
   .hero .kicker { margin-block-end: 1.6rem; }
   .hero h1 { font-size: var(--step-4); max-inline-size: 17ch; margin-inline: auto; }
   .hero h1 em { font-style: italic; }
