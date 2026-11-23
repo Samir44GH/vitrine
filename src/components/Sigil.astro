@@ -1,0 +1,32 @@
+---
+// Signes gravés, un par projet. Dessins géométriques originaux.
+// Pour en ajouter un : une entrée ici, puis `sigil: <nom>` dans la fiche.
+export type SigilName =
+  | 'barres' | 'cercles' | 'rayons' | 'vague'
+  | 'trame' | 'chevrons' | 'losange' | 'grille';
+
+interface Props { name: SigilName; class?: string }
+const { name, class: cls = '' } = Astro.props;
+
+const paths: Record<SigilName, string> = {
+  barres: '<path d="M6 42V26M16 42V14M26 42V6M36 42V18M44 42V30"/>',
+  cercles: '<circle cx="24" cy="24" r="3.2" fill="currentColor" stroke="none"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="17.5"/>',
+  rayons: '<path d="M24 4v12M24 32v12M4 24h12M32 24h12M10 10l8.5 8.5M29.5 29.5 38 38M38 10l-8.5 8.5M18.5 29.5 10 38"/>',
+  vague: '<path d="M5 18c6.3 0 6.3 8 12.7 8s6.3-8 12.6-8 6.4 8 12.7 8"/><path d="M5 32c6.3 0 6.3 8 12.7 8s6.3-8 12.6-8 6.4 8 12.7 8" opacity=".55"/><path d="M5 8c6.3 0 6.3 6 12.7 6S24 8 30.3 8 36.7 14 43 14" opacity=".3"/>',
+  trame: '<path d="M8 8v32M18 8v32M30 8v32M40 8v32"/><path d="M6 16h36M6 26h36M6 36h36" opacity=".45"/>',
+  chevrons: '<path d="m8 18 16-10 16 10"/><path d="m8 28 16-10 16 10" opacity=".6"/><path d="m8 38 16-10 16 10" opacity=".3"/>',
+  losange: '<rect x="11" y="11" width="26" height="26" transform="rotate(45 24 24)"/><circle cx="24" cy="24" r="5" fill="currentColor" stroke="none"/>',
+  grille: '<rect x="7" y="7" width="34" height="34" rx="2"/><path d="M24 7v34M7 24h34"/>',
+};
+---
+<svg
+  class={`sigil-svg ${cls}`}
+  viewBox="0 0 48 48"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.6"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  set:html={paths[name]}
+/>

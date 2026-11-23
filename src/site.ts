@@ -1,20 +1,26 @@
-// Textes et réglages généraux du site : tout ce qui se modifie à un seul endroit.
+// Textes et réglages généraux : tout se modifie ici.
 export const site = {
   name: 'Samir',
   short: 'Samir',
   lang: 'fr',
-  description: 'Vitrine de projets : automatisations n8n assistées par IA et sites web conçus à la main.',
+  description: "Automatisations n8n assistées par IA, bots et sites web : les projets de Samir.",
   github: 'https://github.com/Samir44GH',
+
+  // Moyen de te joindre. Remplace par 'mailto:ton.adresse@exemple.fr' quand tu veux.
+  contact: 'https://github.com/Samir44GH',
+  contactLabel: 'Me contacter',
+
   hero: {
-    eyebrow: 'Portfolio · mis à jour en continu',
-    title: 'Des automatisations qui <em>travaillent</em> à ma place.',
-    lead: "Workflows n8n assistés par IA, bots, veilles et sites web : voici ce que j'ai construit, et comment.",
+    kicker: 'Automatisation & IA — Pornichet',
+    title: 'Des machines qui <em>travaillent</em> à ma place.',
+    lead: "Workflows n8n reliés à des modèles d'IA, avec les garde-fous qui rendent leurs résultats vérifiables.",
   },
+
   about: {
     title: 'À propos',
     paragraphs: [
       "J'apprends et je construis en même temps : chaque projet ci-dessus est un chantier réel, mené de l'idée jusqu'à la mise en service.",
-      "Mon domaine de prédilection aujourd'hui : les workflows automatisés (n8n), reliés à des modèles d'IA, avec des garde-fous pour que les résultats restent vérifiables.",
+      "Mon terrain aujourd'hui, ce sont les workflows automatisés reliés à des modèles d'IA — et surtout les garde-fous qui empêchent une machine bavarde de raconter n'importe quoi.",
     ],
     facts: [
       { value: 'n8n', label: "Outil d'automatisation principal" },

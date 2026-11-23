@@ -12,8 +12,8 @@ const projets = defineCollection({
     category: z.enum(['automatisation', 'web', 'conception']),
     status: z.enum(['en-ligne', 'en-cours', 'archive']).default('en-ligne'),
     stack: z.array(z.string()).default([]),
-    // Teinte (0-360) de la couverture générée. Change-la pour changer la couleur.
-    hue: z.number().min(0).max(360).default(250),
+    // Signe gravé du projet — voir src/components/Sigil.astro
+    sigil: z.enum(['barres', 'cercles', 'rayons', 'vague', 'trame', 'chevrons', 'losange', 'grille']).default('grille'),
     featured: z.boolean().default(false),
     order: z.number().default(100),
     links: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),

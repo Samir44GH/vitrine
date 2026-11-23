@@ -5,7 +5,7 @@ year: 2026
 category: automatisation
 status: en-ligne
 stack: [n8n, IA générative, Telegram]
-hue: 290
+sigil: vague
 order: 5
 ---
 Une façon calme de terminer la journée en restant informé : un texte court qui prend du recul sur les nouvelles de la tech et de l'IA.

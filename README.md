@@ -16,7 +16,8 @@ year: 2026
 category: automatisation   # automatisation | web | conception
 status: en-ligne           # en-ligne | en-cours | archive
 stack: [n8n, Telegram]
-hue: 200                   # couleur de la couverture, de 0 à 360
+sigil: cercles             # signe gravé : barres, cercles, rayons, vague,
+                           #               trame, chevrons, losange, grille
 order: 10                  # plus petit = placé plus haut
 links:
   - { label: Voir le site, url: "https://exemple.fr" }
@@ -55,6 +56,12 @@ Nomme le dépôt `<ton-compte>.github.io` et remplace dans `.github/workflows/de
 ### Nom de domaine personnel
 
 Mets le domaine dans `SITE_URL`, `BASE_PATH: /`, et ajoute un fichier `public/CNAME` contenant le domaine.
+
+## La direction visuelle
+
+« Encre » : une seule matière, deux encres. En thème clair, encre noire sur papier crème ; en thème sombre, encre crème sur plaque noire. Le grain est une texture de papier en clair, un grain argentique en sombre. Tout est monochrome : ce sont les signes gravés qui portent l'œil.
+
+Les signes vivent dans `src/components/Sigil.astro`. Pour en ajouter un, ajoute son dessin SVG dans ce fichier et son nom dans `src/content.config.ts`.
 
 ## Ce qui est inclus
 

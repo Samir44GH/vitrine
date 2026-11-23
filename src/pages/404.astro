@@ -1,11 +1,11 @@
 ---
-import { url } from '../lib';
 import Base from '../layouts/Base.astro';
+import { url } from '../lib';
 ---
 <Base title="Page introuvable">
   <div class="wrap notfound">
     <h1>404</h1>
-    <p>Cette page n'existe pas (ou plus).</p>
-    <p style="margin-block-start:1.5rem"><a class="btn primary" href={url()}>Retour à l'accueil</a></p>
+    <p>Cette page n'existe pas, ou plus.</p>
+    <p style="margin-block-start:1.75rem"><a class="pill solid" href={url()}>Retour à l'accueil</a></p>
   </div>
 </Base>

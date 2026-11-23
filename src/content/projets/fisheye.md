@@ -5,7 +5,7 @@ year: 2022
 category: web
 status: en-ligne
 stack: [HTML, CSS, JavaScript, JSON]
-hue: 200
+sigil: losange
 featured: true
 order: 10
 links:

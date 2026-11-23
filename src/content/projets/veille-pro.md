@@ -5,7 +5,7 @@ year: 2026
 category: automatisation
 status: en-cours
 stack: [n8n, Telegram, Agent IA]
-hue: 30
+sigil: rayons
 order: 3
 ---
 Un modèle de workflow que l'on peut décliner pour chaque client : on règle les sujets à surveiller, le reste tourne seul.

@@ -5,7 +5,7 @@ year: 2026
 category: automatisation
 status: en-cours
 stack: [n8n, Telegram]
-hue: 55
+sigil: chevrons
 order: 7
 ---
 Les courriers administratifs s'accumulent, les échéances passent. Paperasse a pour but de les repérer et de les rappeler au bon moment.

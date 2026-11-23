@@ -20,9 +20,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
-    <meta name="theme-color" content="#6d5dfc" />
+    <meta name="theme-color" content="#16130e" />
     <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
-    <!-- Applique le thème enregistré avant l'affichage, pour éviter le flash -->
     <script is:inline>
       try {
         const t = localStorage.getItem('theme');
@@ -32,9 +31,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <a class="skip" href="#contenu">Aller au contenu</a>
+    <div class="grain" aria-hidden="true"></div>
+    <span class="reg bl" aria-hidden="true"></span>
+    <span class="reg br" aria-hidden="true"></span>
+
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href={url()} aria-label={`${site.name}, accueil`}>{site.short}<span>.</span></a>
+        <a class="brand" href={url()} aria-label={`${site.name}, accueil`}>{site.short}</a>
         <nav class="nav" aria-label="Navigation principale">
           <a href={url('#projets')}>Projets</a>
           <a href={url('#a-propos')}>À propos</a>
@@ -47,13 +50,16 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         </nav>
       </div>
     </header>
+
     <main id="contenu"><slot /></main>
+
     <footer class="site-footer">
       <div class="wrap">
         <span>© {new Date().getFullYear()} {site.name}</span>
-        <span>Construit avec Astro · hébergé sur GitHub Pages</span>
+        <span><a href={site.contact} rel="noopener">{site.contactLabel}</a> · Construit avec Astro</span>
       </div>
     </footer>
+
     <script>
       const btn = document.getElementById('theme-toggle');
       btn?.addEventListener('click', () => {

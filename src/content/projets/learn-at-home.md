@@ -5,7 +5,7 @@ year: 2022
 category: conception
 status: archive
 stack: [User stories, Diagrammes UML, Maquettes, Kanban]
-hue: 330
+sigil: grille
 order: 40
 links:
   - { label: Voir le dossier, url: "https://github.com/Samir44GH/SamirALLAJI_10_281022" }

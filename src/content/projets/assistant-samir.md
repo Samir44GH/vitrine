@@ -5,7 +5,7 @@ year: 2026
 category: automatisation
 status: en-ligne
 stack: [n8n, Telegram, DeepSeek, Agent IA]
-hue: 265
+sigil: barres
 featured: true
 order: 1
 ---

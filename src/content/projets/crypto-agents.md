@@ -5,7 +5,7 @@ year: 2026
 category: automatisation
 status: en-ligne
 stack: [n8n, Binance, DefiLlama, DeepSeek, Claude, Telegram]
-hue: 150
+sigil: cercles
 featured: true
 order: 2
 ---

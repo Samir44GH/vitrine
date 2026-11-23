@@ -5,7 +5,7 @@ year: 2026
 category: automatisation
 status: en-cours
 stack: [n8n, Données météo, IA]
-hue: 90
+sigil: trame
 order: 6
 ---
 Un dicton météo est-il vrai ? Ce workflow le confronte aux données météo historiques de Pornichet.

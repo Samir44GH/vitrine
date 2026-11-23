@@ -1,8 +1,9 @@
 ---
-import { url } from '../../lib';
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import Sigil from '../../components/Sigil.astro';
 import { categories, statuses } from '../../site';
+import { url } from '../../lib';
 
 export async function getStaticPaths() {
   const projets = await getCollection('projets');
@@ -16,19 +17,17 @@ const d = p.data;
   <div class="wrap">
     <div class="project-hero">
       <a class="back" href={url('#projets')}>← Tous les projets</a>
-      <div class="meta">
-        <span class="badge">{categories[d.category]}</span>
-        <span class={`badge ${d.status === 'en-ligne' ? 'live' : ''}`}>{statuses[d.status]}</span>
-        <span>{d.year}</span>
+      <div class="project-head">
+        <span class="sigil"><Sigil name={d.sigil} /></span>
+        <div>
+          <span class="kicker">{categories[d.category]} — {statuses[d.status]} · {d.year}</span>
+          <h1>{d.title}</h1>
+        </div>
       </div>
-      <h1>{d.title}</h1>
       <p class="lead">{d.summary}</p>
     </div>
     <div class="project-layout">
-      <article>
-        <div class="cover project-cover" style={`--h:${d.hue}`} aria-hidden="true"><span>{d.title.trim().charAt(0).toUpperCase()}</span></div>
-        <div class="prose"><Content /></div>
-      </article>
+      <article class="prose"><Content /></article>
       <aside class="aside" aria-label="Informations sur le projet">
         {d.stack.length > 0 && (
           <div>
@@ -40,7 +39,7 @@ const d = p.data;
           <div>
             <h2>Liens</h2>
             <div class="links">
-              {d.links.map((l, i) => <a class={`btn ${i === 0 ? 'primary' : ''}`} href={l.url} rel="noopener">{l.label} ↗</a>)}
+              {d.links.map((l, i) => <a class={`pill ${i === 0 ? 'solid' : 'ghost'}`} href={l.url} rel="noopener">{l.label} ↗</a>)}
             </div>
           </div>
         )}
