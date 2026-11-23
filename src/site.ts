@@ -16,6 +16,9 @@ export const site = {
     lead: "Workflows n8n reliés à des modèles d'IA, avec les garde-fous qui rendent leurs résultats vérifiables.",
   },
 
+  // Nom tracé à la main au bas du « À propos ».
+  signature: 'Samir',
+
   about: {
     title: 'À propos',
     paragraphs: [

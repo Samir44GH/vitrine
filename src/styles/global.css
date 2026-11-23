@@ -1,6 +1,16 @@
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/fraunces';
 
+/* Alex Brush, sous-ensemblée (SIL OFL — voir public/fonts/OFL-AlexBrush.txt).
+   Famille renommée parce qu'il s'agit d'une version modifiée. */
+@font-face {
+  font-family: 'Signature';
+  src: url('../fonts/signature.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ============================================================
    « Encre » — une seule matière, deux encres.
    Thème clair  : encre noire sur papier crème (grain = texture du papier).
@@ -290,6 +300,15 @@
     font: 500 0.7rem / 1 var(--font-ui); letter-spacing: 0.04em;
     padding: 0.25rem 0.55rem; border-radius: 0.35rem;
     background: var(--surface-2); color: var(--ink-soft);
+  }
+
+  /* La signature : une seule apparition, au bas du texte personnel */
+  .signature {
+    font-family: 'Signature', 'Segoe Script', cursive;
+    font-size: clamp(2.6rem, 1.9rem + 3vw, 4rem);
+    line-height: 1.25;
+    color: var(--ink);
+    margin-block-start: 1.75rem;
   }
 
   /* --- À propos --- */

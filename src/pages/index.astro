@@ -47,6 +47,7 @@ const present = Object.entries(categories).filter(([k]) => projets.some((p) => p
       <div>
         <h2 id="t-apropos">{site.about.title}</h2>
         {site.about.paragraphs.map((t) => <p>{t}</p>)}
+        <p class="signature">{site.signature}</p>
       </div>
       <ul class="facts" role="list">
         {site.about.facts.map((f) => <li><strong>{f.value}</strong><span>{f.label}</span></li>)}

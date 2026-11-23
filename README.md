@@ -72,6 +72,12 @@ Deux textures dans `public/tex/`, en deux versions chacune (claire et sombre) :
 
 Pour en changer : repasse ton image par `scripts/prep_texture.py` (passe-haut, amplitude douce, raccords fondus), sinon elle assombrira la page et sa mosaïque se verra. Le réglage se fait par les variables `--tex-*` en haut de `global.css`.
 
+### La signature
+
+`public/fonts/signature.woff2` est **Alex Brush**, sous-ensemblée aux caractères latins et aux accents français (21 Ko au lieu de 115). Licence SIL OFL, jointe dans le même dossier. La famille CSS s'appelle `Signature` et non `Alex Brush`, parce qu'il s'agit d'une version modifiée.
+
+Elle n'apparaît **qu'une fois**, au bas du « À propos ». Le nom signé se change dans `src/site.ts` (`signature`).
+
 Les signes vivent dans `src/components/Sigil.astro`. Pour en ajouter un, ajoute son dessin SVG dans ce fichier et son nom dans `src/content.config.ts`.
 
 ## Ce qui est inclus
