@@ -1,11 +1,20 @@
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/fraunces';
 
-/* Alex Brush, sous-ensemblée (SIL OFL — voir public/fonts/OFL-AlexBrush.txt).
-   Famille renommée parce qu'il s'agit d'une version modifiée. */
+/* Deux écritures manuscrites, sous-ensemblées aux latins et aux accents
+   français (SIL OFL — voir les fichiers OFL-*.txt du même dossier).
+   Familles renommées : ce sont des versions modifiées.
+   Pour changer de main, une seule ligne : --font-signature, plus bas. */
 @font-face {
-  font-family: 'Signature';
-  src: url('../fonts/signature.woff2') format('woff2');
+  font-family: 'Signature Great Vibes';
+  src: url('../fonts/signature-great-vibes.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Signature Alex Brush';
+  src: url('../fonts/signature-alex-brush.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -53,6 +62,8 @@
 
     --font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
     --font-ui: 'Inter Variable', system-ui, sans-serif;
+    /* La main qui signe. L'autre choix : 'Signature Alex Brush' */
+    --font-signature: 'Signature Great Vibes';
 
     --step--1: clamp(0.8rem, 0.77rem + 0.15vw, 0.88rem);
     --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.08rem);
@@ -304,7 +315,7 @@
 
   /* La signature : une seule apparition, au bas du texte personnel */
   .signature {
-    font-family: 'Signature', 'Segoe Script', cursive;
+    font-family: var(--font-signature), 'Segoe Script', cursive;
     font-size: clamp(2.6rem, 1.9rem + 3vw, 4rem);
     line-height: 1.25;
     color: var(--ink);

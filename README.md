@@ -74,9 +74,20 @@ Pour en changer : repasse ton image par `scripts/prep_texture.py` (passe-haut, a
 
 ### La signature
 
-`public/fonts/signature.woff2` est **Alex Brush**, sous-ensemblée aux caractères latins et aux accents français (21 Ko au lieu de 115). Licence SIL OFL, jointe dans le même dossier. La famille CSS s'appelle `Signature` et non `Alex Brush`, parce qu'il s'agit d'une version modifiée.
+Deux écritures manuscrites sont installées dans `public/fonts/`, sous-ensemblées aux caractères latins et aux accents français. Licences SIL OFL jointes. Les familles CSS sont renommées, s'agissant de versions modifiées.
 
-Elle n'apparaît **qu'une fois**, au bas du « À propos ». Le nom signé se change dans `src/site.ts` (`signature`).
+| Fichier | Famille CSS | Poids |
+|---|---|---|
+| `signature-great-vibes.woff2` | `Signature Great Vibes` | 27 Ko — **en service** |
+| `signature-alex-brush.woff2` | `Signature Alex Brush` | 21 Ko |
+
+Le navigateur ne télécharge que celle qui sert. Pour changer de main, une seule ligne en haut de `global.css` :
+
+```css
+--font-signature: 'Signature Alex Brush';
+```
+
+Elle n'apparaît **qu'une fois**, au bas du « À propos » : une écriture manuscrite utilisée plus d'une fois cesse d'être une signature. Le nom signé se change dans `src/site.ts` (`signature`).
 
 Les signes vivent dans `src/components/Sigil.astro`. Pour en ajouter un, ajoute son dessin SVG dans ce fichier et son nom dans `src/content.config.ts`.
 
