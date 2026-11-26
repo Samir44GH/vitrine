@@ -3,10 +3,12 @@ title: "Quelle Luciole es-tu ?"
 summary: "Une date de naissance, et la page révèle votre Luciole — en montrant son calcul et sans rien envoyer nulle part."
 year: 2026
 category: web
-status: en-cours
+status: en-ligne
 stack: [HTML, CSS, JavaScript, Chiromancie]
 sigil: lueur
 order: 9
+links:
+  - { label: Essayer la page, url: "https://claude.ai/artifact/SbAcEr5B6xDRm8p1CcXzaN" }
 ---
 J'écris un roman. Plutôt que d'en parler, j'ai construit une porte d'entrée : une page qui transforme une date de naissance en personnage de son univers.
 
