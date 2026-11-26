@@ -7,7 +7,7 @@ export const site = {
   github: 'https://github.com/Samir44GH',
 
   hero: {
-    kicker: 'Automatisation & IA — Pornichet',
+    kicker: 'Automatisation & IA',
     title: 'Des machines qui <em>travaillent</em> à ma place.',
     lead: "Workflows n8n reliés à des modèles d'IA, avec les garde-fous qui rendent leurs résultats vérifiables.",
   },
