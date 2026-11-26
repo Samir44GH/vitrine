@@ -79,7 +79,11 @@ Un workflow ne se voit pas. Le bloc `.recu` compose son **vrai message** dans la
 </figure>
 ```
 
-Classes disponibles : `recu-src` (mention de source, en petit), `recu-pari` (filet à gauche), `recu-q` (question finale, en sérif), `recu-coulisses` (pied, séparé par un filet). Le contenu s'écrit en HTML, pas en Markdown.
+Classes disponibles : `recu-src` (mention de source, en petit), `recu-pari` (filet à gauche), `recu-q` (question finale, en sérif), `recu-coulisses` (pied, séparé par un filet), `recu-avert` (avertissement, en italique).
+
+Pour un message qui répète la même grille sur plusieurs objets — une alerte par actif, par exemple — enveloppe chacun dans `recu-actif`, avec `recu-tick` pour sa ligne de titre, `recu-verdict` pour sa pastille et `recu-dl` pour la liste `dt` / `dd` des critères. Voir `crypto-agents.md`.
+
+Le contenu s'écrit en HTML, pas en Markdown.
 
 **Reproduire le message sans le retoucher** : c'est sa valeur de preuve. Un exemple complet se trouve dans `src/content/projets/souffle-du-jour.md`.
 
