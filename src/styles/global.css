@@ -454,6 +454,20 @@
   .cascade li + li .cascade-c { border-block-start: 1px solid var(--rule); padding-block-start: 0.75rem; }
   .cascade li + li .cascade-h { border-block-start: 1px solid transparent; padding-block-start: 0.75rem; }
 
+  /* Un échange : question posée, réponse de la machine */
+  .echange { display: grid; gap: 0.5rem; }
+  .echange + .echange { margin-block-start: 1.3rem; padding-block-start: 1.3rem; border-block-start: 1px solid var(--rule); }
+  .echange-r { margin-block-start: 0.9rem; }
+  .echange dt {
+    font: 500 0.76rem / 1 var(--font-label); letter-spacing: 0.08em; color: var(--ink-soft);
+    margin-block-end: 0.35rem;
+  }
+  .echange dd { margin: 0; font-size: 0.9rem; line-height: 1.6; }
+  .echange .q { border-inline-start: 2px solid var(--rule); padding-inline-start: 0.9rem; }
+  .echange .q p + p { margin-block-start: 0.2rem; }
+  .echange .r p + p { margin-block-start: 0.65rem; }
+  .echange .r b { font-weight: 600; }
+
   .recu-avert {
     border-block-start: 1px solid var(--rule); margin-block-start: 1.2rem; padding-block-start: 0.8rem;
     font-size: 0.78rem; color: var(--ink-soft); font-style: italic;
