@@ -98,6 +98,14 @@ Deux textures dans `public/tex/`, en deux versions chacune (claire et sombre) :
 
 Pour en changer : repasse ton image par `scripts/prep_texture.py` (passe-haut, amplitude douce, raccords fondus), sinon elle assombrira la page et sa mosaïque se verra. Le réglage se fait par les variables `--tex-*` en haut de `global.css`.
 
+### La police des titres
+
+`public/fonts/fraunces-display.woff2` et son italique sont une **Fraunces préparée pour ce site**, fabriquée par `scripts/fraunces.py` à partir du fichier complet du paquet.
+
+Deux axes y sont figés : **WONK à 0**, qui supprime les lettres excentriques de la police — dont un J très tordu, peu lisible en titre — et SOFT à 0. La taille optique reste variable, et `font-optical-sizing: auto` laisse le navigateur l'ajuster au corps réel de chaque texte.
+
+Le paquet `@fontsource-variable/fraunces` n'est plus installé : son fichier n'exposait que la graisse, ce qui rendait la taille optique inopérante, ne permettait pas de couper WONK, et laissait le navigateur fabriquer une fausse italique.
+
 ### Les étiquettes
 
 `public/fonts/etiquettes-cormorant-sc.woff2` est **Cormorant SC Medium** (9 Ko), utilisée pour les étiquettes qui encadrent la page : navigation, sur-titre, retour, titres de colonne.

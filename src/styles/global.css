@@ -1,5 +1,24 @@
 @import '@fontsource-variable/inter';
-@import '@fontsource-variable/fraunces';
+
+/* Fraunces, préparée pour ce site (scripts/fraunces.py) : l'axe WONK, qui
+   produit ses lettres excentriques — dont un J très tordu —, est figé à 0,
+   et l'axe SOFT aussi. La taille optique reste variable : le navigateur
+   l'ajuste seul à chaque corps. La vraie italique remplace l'oblique
+   fabriquée par le navigateur. SIL OFL, voir OFL-Fraunces.txt. */
+@font-face {
+  font-family: 'Fraunces Display';
+  src: url('../fonts/fraunces-display.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fraunces Display';
+  src: url('../fonts/fraunces-display-italic.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 /* Deux écritures manuscrites, sous-ensemblées aux latins et aux accents
    français (SIL OFL — voir les fichiers OFL-*.txt du même dossier).
@@ -69,7 +88,7 @@
     --tex-blend: multiply;
     --tex-encre-opacity: 0.55;
 
-    --font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+    --font-display: 'Fraunces Display', Georgia, 'Times New Roman', serif;
     --font-ui: 'Inter Variable', system-ui, sans-serif;
     /* La main qui signe. L'autre choix : 'Signature Alex Brush' */
     --font-signature: 'Signature Great Vibes';
@@ -77,7 +96,7 @@
     --font-brand: var(--font-signature);
     /* Les étiquettes du cadre de la page. Leur texte s'écrit en minuscules :
        c'est la police qui les dessine en petites capitales. */
-    --font-label: 'Etiquettes', 'Fraunces Variable', Georgia, serif;
+    --font-label: 'Etiquettes', 'Fraunces Display', Georgia, serif;
 
     --step--1: clamp(0.8rem, 0.77rem + 0.15vw, 0.88rem);
     --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.08rem);
@@ -152,7 +171,7 @@
   h1, h2, h3 {
     font-family: var(--font-display);
     font-weight: 400;
-    font-variation-settings: 'opsz' 144;
+    font-optical-sizing: auto;
     line-height: 1.08;
     text-wrap: balance;
   }
@@ -404,8 +423,11 @@
   .about p + p { margin-block-start: 0.9rem; }
   .facts { display: grid; gap: 0; list-style: none; padding: 0; border-block-start: 1px solid var(--rule); }
   .facts li { display: flex; align-items: baseline; gap: 1rem; padding-block: 1rem; border-block-end: 1px solid var(--rule); }
-  .facts strong { font-family: var(--font-display); font-size: var(--step-1); font-weight: 400; min-inline-size: 4.5rem; }
-  .facts span { color: var(--ink-soft); font-size: var(--step--1); }
+  .facts strong {
+    font: 600 0.98rem / 1.4 var(--font-ui); letter-spacing: 0.005em;
+    min-inline-size: 4.5rem; flex: none;
+  }
+  .facts span { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.5; }
 
   /* --- Un message reçu : la sortie réelle d'un workflow, composée dans la
          matière du site plutôt que montrée en capture d'écran. --- */
