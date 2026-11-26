@@ -1,6 +1,6 @@
 ---
 title: "Quelle Luciole es-tu ?"
-summary: "Une page où une date de naissance révèle sa Luciole : l'univers des Sept Lumières, tiré du roman que j'écris."
+summary: "Une date de naissance, et la page révèle votre Luciole — en montrant son calcul et sans rien envoyer nulle part."
 year: 2026
 category: web
 status: en-cours
@@ -10,22 +10,36 @@ order: 9
 ---
 J'écris un roman. Plutôt que d'en parler, j'ai construit une porte d'entrée : une page qui transforme une date de naissance en personnage de son univers.
 
-## Ce que donne la page
+> Dans la nuit, certaines personnes brillent. On les appelle les Lucioles. Elles se reconnaissent à un point de lumière dorée au creux de la paume, et elles sont douze : une par signe du zodiaque.
 
-Le visiteur entre sa date, et reçoit sa carte : sa Luciole, sa pierre, sa lumière, son ombre et son chemin de vie. La carte se télécharge en image et se partage.
+Le visiteur donne sa date, et reçoit sa carte : sa Luciole, sa pierre, sa lumière, son ombre, son chemin de vie. La carte se télécharge en image et le résultat se copie en texte.
 
-La lecture complète détaille les deux visages de chaque Luciole, ce que le Murmure lui souffle, le calcul du chemin de vie posé en clair, et l'accord entre la Luciole du signe et celle du chemin. Un Cercle des Douze permet de rencontrer les autres, et une section reprend les sept monts et les quatre lignes de la paume.
+## La page montre son calcul
 
-## Les règles de construction
+C'est le détail dont je suis le plus content, et il n'allait pas de soi sur un sujet pareil.
 
-**La date ne quitte pas le navigateur.** Aucun calcul n'est envoyé ailleurs, aucune donnée n'est conservée.
+Le chemin de vie n'est pas annoncé comme une révélation : **l'addition est affichée en clair**, chiffre par chiffre, jusqu'au résultat. On voit les chiffres de sa date s'additionner, puis la somme se réduire. La règle est écrite au bas de la page, avec les nombres maîtres qu'elle conserve.
 
-**Un résultat se partage par son adresse.** La page inscrit la Luciole obtenue dans le lien : rouvert ailleurs, il montre la même.
+Une page d'astrologie qui pose son arithmétique sur la table ne demande pas qu'on la croie : elle montre ce qu'elle fait. Le lecteur peut refaire le calcul.
 
-**Rien de l'intrigue n'est dévoilé.** Les douze personnages donnent leur signe, leur pierre et leur caractère, mais les retournements du roman restent dehors.
+## La date ne quitte pas le navigateur
 
-**Les bascules sont signalées.** Un visiteur né un jour de changement de signe voit une note l'invitant à regarder aussi le signe voisin.
+La page le dit elle-même, sous le bouton, avant même qu'on ait cliqué :
+
+> Ta date reste dans ton navigateur. Rien n'est envoyé.
+
+Et c'est vrai : tout le calcul se fait sur la machine du visiteur. Aucun serveur ne reçoit quoi que ce soit, rien n'est conservé. Une date de naissance n'est pas une donnée anodine, et il n'y a aucune raison de la collecter pour afficher un résultat qu'on sait calculer sur place.
+
+## Ce que la lecture déroule
+
+Au-delà de la carte, la page développe le portrait du personnage correspondant, ses deux visages — une lumière et une ombre —, sa pierre, son chemin de vie et l'accord entre les deux lectures. Un cercle des douze permet de rencontrer les autres Lucioles, et une section sur la paume reprend les monts et les lignes telles que la saga les emploie.
+
+Le résultat s'inscrit dans l'adresse de la page : un lien partagé rouvre la même Luciole.
 
 ## Vérification
 
-1 134 contrôles automatiques : chacun des 366 jours tombe sur un seul signe, toutes les bornes sont justes, toutes les dates de 1920 à 2026 donnent un chemin connu, et les dates impossibles sont refusées.
+1 134 contrôles automatiques : chacun des 366 jours tombe sur un seul signe, toutes les bornes de dates sont justes, toutes les dates de 1920 à 2026 donnent un chemin connu, et les dates impossibles sont refusées. Un visiteur né un jour de changement de signe voit une note l'invitant à regarder aussi le signe voisin.
+
+## Rien de l'intrigue
+
+Les douze personnages donnent leur signe, leur âge, leur métier et leur caractère. Les retournements du roman, eux, restent dehors : la page est une entrée dans l'univers, pas un résumé du livre, qui est toujours en cours d'écriture.
