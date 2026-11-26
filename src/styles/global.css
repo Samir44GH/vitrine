@@ -451,6 +451,31 @@
   .links { display: grid; gap: 0.5rem; }
   .links .pill { justify-content: center; }
 
+  /* Une fiche lue doit en ouvrir une autre */
+  .suite {
+    display: grid; gap: 0.8rem; grid-template-columns: 1fr;
+    border-block-start: 1px solid var(--rule);
+    padding-block: 1.5rem clamp(3rem, 8vw, 5rem);
+  }
+  @media (min-width: 40rem) { .suite { grid-template-columns: 1fr 1fr; } }
+  .suite-vide { display: none; }
+  @media (min-width: 40rem) { .suite-vide { display: block; } }
+
+  .suite-lien {
+    display: grid; gap: 0.7rem; padding: 1.1rem 1.3rem; text-decoration: none;
+    border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface);
+    transition: border-color 0.3s, transform 0.35s var(--ease);
+  }
+  .suite-lien:hover { border-color: var(--ink); transform: translateY(-3px); }
+  .suite-lien.fin { text-align: end; }
+  .suite-sens {
+    font: 500 0.8rem / 1 var(--font-label); letter-spacing: 0.06em; color: var(--ink-soft);
+  }
+  .suite-corps { display: flex; align-items: center; gap: 0.9rem; }
+  .suite-lien.fin .suite-corps { justify-content: flex-end; }
+  .suite-corps .sigil { inline-size: 2.5rem; block-size: 2.5rem; padding: 0.45rem; border-radius: 0.45rem; flex: none; }
+  .suite-titre { font-family: var(--font-display); font-size: var(--step-1); line-height: 1.15; min-inline-size: 0; }
+
   .notfound { text-align: center; padding-block: clamp(5rem, 15vw, 9rem); }
   .notfound h1 { font-size: var(--step-4); }
   .notfound p { color: var(--ink-soft); margin-block-start: 0.75rem; }

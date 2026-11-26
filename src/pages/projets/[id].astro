@@ -6,10 +6,16 @@ import { categories, statuses } from '../../site';
 import { url } from '../../lib';
 
 export async function getStaticPaths() {
-  const projets = await getCollection('projets');
-  return projets.map((p) => ({ params: { id: p.id }, props: { p } }));
+  // Même tri que la page d'accueil, pour que « suivant » suive vraiment.
+  const projets = (await getCollection('projets')).sort(
+    (a, b) => a.data.order - b.data.order || b.data.year - a.data.year,
+  );
+  return projets.map((p, i) => ({
+    params: { id: p.id },
+    props: { p, prev: projets[i - 1] ?? null, next: projets[i + 1] ?? null },
+  }));
 }
-const { p } = Astro.props;
+const { p, prev, next } = Astro.props;
 const { Content } = await render(p);
 const d = p.data;
 ---
@@ -26,6 +32,7 @@ const d = p.data;
       </div>
       <p class="lead">{d.summary}</p>
     </div>
+
     <div class="project-layout">
       <article class="prose"><Content /></article>
       <aside class="aside" aria-label="Informations sur le projet">
@@ -45,5 +52,27 @@ const d = p.data;
         )}
       </aside>
     </div>
+
+    <nav class="suite" aria-label="Autres projets">
+      {prev ? (
+        <a class="suite-lien" href={url(`projets/${prev.id}/`)} rel="prev">
+          <span class="suite-sens">← Précédent</span>
+          <span class="suite-corps">
+            <span class="sigil"><Sigil name={prev.data.sigil} /></span>
+            <span class="suite-titre">{prev.data.title}</span>
+          </span>
+        </a>
+      ) : <span class="suite-vide" aria-hidden="true"></span>}
+
+      {next ? (
+        <a class="suite-lien fin" href={url(`projets/${next.id}/`)} rel="next">
+          <span class="suite-sens">Suivant →</span>
+          <span class="suite-corps">
+            <span class="suite-titre">{next.data.title}</span>
+            <span class="sigil"><Sigil name={next.data.sigil} /></span>
+          </span>
+        </a>
+      ) : <span class="suite-vide" aria-hidden="true"></span>}
+    </nav>
   </div>
 </Base>
