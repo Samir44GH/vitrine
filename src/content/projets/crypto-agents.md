@@ -108,4 +108,46 @@ Trois mots, et c'est pourtant la partie à laquelle je tiens le plus. Un outil d
 
 C'est la boucle qui manque à la plupart des outils de ce genre. Sans elle, une machine a toujours raison.
 
+## Quand le marché décroche
+
+Le bot ne surveille pas que les cryptomonnaies : il suit aussi les grands indices, parce que le marché crypto réagit à l'appétit général pour le risque. L'après-midi du 25 novembre 2026, il a envoyé quatre messages en une heure et demie, chacun notant l'intensité du mouvement sur dix.
+
+<figure class="recu breve">
+<figcaption><b>Mon robot crypto · alerte marché</b> <span>25 novembre 2026, quatre messages en une heure et demie</span></figcaption>
+<div class="recu-corps">
+<ol class="cascade">
+<li><span class="cascade-h">16 h 06</span><span class="cascade-c">🔻 Nasdaq 100 (QQQ) — <b>8/10</b><br />618,31 $ · <i>indice −3,1 % sur la séance</i></span></li>
+<li><span class="cascade-h">16 h 36</span><span class="cascade-c">🔻 Nasdaq 100 (QQQ) — <b>8/10</b><br />613,27 $ · <i>indice −3,9 % sur la séance</i></span></li>
+<li><span class="cascade-h">17 h 06</span><span class="cascade-c">🔻 Nasdaq 100 (QQQ) — <b>9/10</b><br />610,67 $ · <i>indice −4,3 % sur la séance</i><br />🔻 Nvidia (NVDA) — <b>8/10</b><br />142,58 $ · <i>−8,2 % sur la séance</i></span></li>
+<li><span class="cascade-h">17 h 36</span><span class="cascade-c">🔻 Nasdaq 100 (QQQ) — <b>9/10</b><br />610,33 $ · <i>indice −4,4 % sur la séance</i><br />🔻 Nvidia (NVDA) — <b>8/10</b><br />142,04 $ · <i>−8,6 % sur la séance</i></span></li>
+</ol>
+<p class="recu-avert">Mouvement mesuré, pas une recommandation. Prochain point dans le rapport du matin.</p>
+</div>
+</figure>
+
+On voit la journée se dégrader en direct : la note passe de 8 à 9 sur dix, et Nvidia entre dans le message à 17 h 06. Pourtant le ton ne change pas d'un mot. « Mouvement mesuré, pas une recommandation » ferme chaque alerte, y compris la plus grave. Un outil qui s'excite en même temps que le marché serait inutile — c'est précisément dans ces moments qu'il faut une voix plate.
+
+## Il se note lui-même
+
+C'est la partie dont je suis le plus fier. Chaque nuit, le bot ressort ses anciennes annonces, mesure ce qui s'est réellement passé, et se donne une note.
+
+<figure class="recu breve">
+<figcaption><b>Autocontrôle du bot crypto</b> <span>26 novembre 2026, 1 h 20</span></figcaption>
+<div class="recu-corps">
+<p><b>✅ ENA, baissier</b> — confiance moyenne, annoncé le 18 novembre 2026.<br />−8,93 % en 7 jours, BTC −4,14 %, écart −4,79 pt → <b>juste</b></p>
+<p class="recu-demande">Réussite à 7 jours : 83 %</p>
+<p class="recu-coulisses">10 justes, 2 faux. Neutres exclus, répétitions regroupées, écart mesuré face au BTC.</p>
+</div>
+</figure>
+
+Les trois précisions de la dernière ligne font tout le travail, et c'est pour elles que ce message mérite d'être lu en entier.
+
+- **L'écart est mesuré face au BTC.** Annoncer une baisse dans un marché qui baisse entièrement n'a aucun mérite. Ici, l'annonce ne compte comme juste que si l'actif a fait pire que le marché.
+- **Les neutres sont exclus.** Une machine qui comptabiliserait ses « je ne sais pas » comme des réussites gonflerait son score sans rien prédire.
+- **Les répétitions sont regroupées.** Annoncer dix fois la même chose sur le même actif ne vaut qu'une annonce.
+
+Chacune de ces trois règles **fait baisser** le score affiché. Ce sont des précautions contre soi-même, et c'est ce qui rend le chiffre crédible.
+
+Une réserve honnête, dans le même esprit : 83 % porte sur douze annonces. C'est trop peu pour conclure quoi que ce soit. Le chiffre vaut surtout parce qu'il existe et qu'il est tenu.
+
 Cette alerte est un instantané daté : les prix qu'elle contient étaient ceux du 26 novembre 2026 et n'ont plus aucune valeur aujourd'hui. Elle est ici pour montrer la forme du raisonnement, pas son contenu.
