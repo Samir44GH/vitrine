@@ -6,7 +6,7 @@ category: automatisation
 status: en-ligne
 stack: [n8n, Telegram, DeepSeek, PDF]
 sigil: rayons
-order: 4
+order: 5
 ---
 Un modèle de workflow conçu pour être décliné : on règle les sujets à surveiller et les sources à lire, le reste tourne seul. Il sert aujourd'hui à ma propre veille sur l'IA et les automatisations, et peut se configurer pour une veille concurrentielle, réglementaire ou sectorielle.
 

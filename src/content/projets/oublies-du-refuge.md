@@ -6,7 +6,7 @@ category: automatisation
 status: en-cours
 stack: [n8n, Telegram, DeepSeek, Data Tables]
 sigil: refuge
-order: 7
+order: 8
 ---
 Dans un refuge, certains animaux attendent des mois sans que personne ne parle d'eux. Ce workflow leur donne un rendez-vous hebdomadaire.
 

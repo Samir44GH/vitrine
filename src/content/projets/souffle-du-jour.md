@@ -6,7 +6,7 @@ category: automatisation
 status: en-ligne
 stack: [n8n, IA générative, Telegram]
 sigil: vague
-order: 6
+order: 7
 ---
 Une veille d'actualité qui ne cherche pas à tout dire. Chaque soir à 21 h, le workflow lit la presse technique, trie, et compose un message en trois temps : ce qui arrive, ce qu'il faut retenir, et ce qu'on peut laisser filer.
 
