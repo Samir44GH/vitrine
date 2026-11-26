@@ -15,6 +15,34 @@ export const site = {
   // Nom tracé à la main au bas du « À propos ».
   signature: 'Samir',
 
+  // La section qui énonce le fil commun, entre l'accroche et les projets.
+  these: {
+    title: 'Une machine doit pouvoir avoir tort',
+    lead: "Un modèle de langage produit des phrases plausibles : c'est son métier, et c'est aussi son danger. Il énonce un chiffre faux avec le même aplomb qu'un chiffre juste. La plupart du travail ci-dessous ne sert pas à rendre ces machines plus intelligentes, mais à les rendre réfutables.",
+    preuves: [
+      {
+        texte: "Chaque soir, une prédiction datée — accompagnée du critère exact que le code viendra compter quelques jours plus tard.",
+        projet: 'souffle-du-jour',
+        nom: 'Le Souffle du jour',
+      },
+      {
+        texte: "Chaque nuit, le bot ressort ses annonces passées et se note. Ses trois règles de comptage font toutes baisser son propre score.",
+        projet: 'crypto-agents',
+        nom: 'Analyse crypto à agents IA',
+      },
+      {
+        texte: "Le verdict est donné avec la force de la preuve qui le soutient, et une rubrique désigne ce qui reste à vérifier à la main.",
+        projet: 'actions-workflow',
+        nom: 'Actions Workflow',
+      },
+      {
+        texte: "L'IA lit les documents et compose les menus ; tout ce qui se mesure est calculé par le code. Un prix est lu sur la page, jamais deviné.",
+        projet: 'paperasse',
+        nom: 'Paperasse',
+      },
+    ],
+  },
+
   about: {
     title: 'À propos',
     paragraphs: [

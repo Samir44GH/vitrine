@@ -24,6 +24,21 @@ const filtrable = present.length > 1;
     </div>
   </section>
 
+  <section class="these" id="methode" aria-labelledby="t-these">
+    <div class="wrap">
+      <h2 id="t-these">{site.these.title}</h2>
+      <p class="these-lead">{site.these.lead}</p>
+      <ol class="preuves" role="list">
+        {site.these.preuves.map((pr) => (
+          <li>
+            <p>{pr.texte}</p>
+            <a href={url(`projets/${pr.projet}/`)}>{pr.nom} →</a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
   <section id="projets" aria-labelledby="t-projets">
     <div class="wrap">
       <div class="section-head">

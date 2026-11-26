@@ -339,6 +339,29 @@
     margin-block-start: 1.75rem;
   }
 
+  /* --- Le fil commun, énoncé avant les projets --- */
+  .these { padding-block: clamp(2.5rem, 7vw, 5rem); }
+  .these h2 { font-size: var(--step-2); max-inline-size: 20ch; }
+  .these-lead {
+    color: var(--ink-soft); max-inline-size: 58ch; margin-block-start: 1rem;
+  }
+  .preuves {
+    list-style: none; padding: 0; margin-block-start: clamp(1.5rem, 4vw, 2.5rem);
+    display: grid; gap: 0; border-block-start: 1px solid var(--rule);
+  }
+  .preuves li {
+    display: grid; gap: 0.5rem 2rem; align-items: baseline;
+    padding-block: 1.1rem; border-block-end: 1px solid var(--rule);
+  }
+  @media (min-width: 46rem) { .preuves li { grid-template-columns: minmax(0, 1fr) 14rem; } }
+  .preuves p { max-inline-size: 62ch; }
+  .preuves a {
+    font: 500 var(--step--1) / 1.4 var(--font-label); letter-spacing: 0.04em;
+    text-decoration: none; color: var(--ink-soft); white-space: nowrap;
+  }
+  @media (min-width: 46rem) { .preuves a { text-align: end; } }
+  .preuves a:hover { color: var(--ink); text-decoration: underline; }
+
   /* --- À propos --- */
   .about { display: grid; gap: clamp(1.5rem, 5vw, 3rem); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); align-items: start; }
   .about h2 { font-size: var(--step-2); margin-block-end: 1.1rem; }
