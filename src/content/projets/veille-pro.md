@@ -6,7 +6,7 @@ category: automatisation
 status: en-cours
 stack: [n8n, Telegram, Agent IA]
 sigil: rayons
-order: 3
+order: 4
 ---
 Un modèle de workflow que l'on peut décliner pour chaque client : on règle les sujets à surveiller, le reste tourne seul.
 

@@ -7,7 +7,7 @@ status: en-cours
 stack: [n8n, Telegram, DeepSeek, Data Tables, Open-Meteo]
 sigil: chevrons
 featured: true
-order: 4
+order: 5
 ---
 Les courriers s'empilent, les échéances passent, les abonnements se multiplient. Paperasse est un bot à qui on envoie une photo, un PDF ou une phrase, et qui s'occupe du reste.
 

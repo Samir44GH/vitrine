@@ -20,6 +20,7 @@ export const site = {
     paragraphs: [
       "J'apprends et je construis en même temps : chaque projet ci-dessus est un chantier réel, mené de l'idée jusqu'à la mise en service.",
       "Mon terrain aujourd'hui, ce sont les workflows automatisés reliés à des modèles d'IA — et surtout les garde-fous qui empêchent une machine bavarde de raconter n'importe quoi.",
+      "Tous ces workflows tournent chez moi, pour moi. Aucun n'est un service, aucun n'est proposé à qui que ce soit : ce sont des outils personnels, montrés ici pour ce qu'ils sont.",
     ],
     facts: [
       { value: 'n8n', label: "Outil d'automatisation principal" },
