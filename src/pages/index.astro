@@ -9,6 +9,8 @@ const projets = (await getCollection('projets')).sort(
   (a, b) => a.data.order - b.data.order || b.data.year - a.data.year,
 );
 const present = Object.entries(categories).filter(([k]) => projets.some((p) => p.data.category === k));
+// Filtrer n'a de sens qu'à partir de deux catégories.
+const filtrable = present.length > 1;
 ---
 <Base>
   <section class="hero">
@@ -26,10 +28,12 @@ const present = Object.entries(categories).filter(([k]) => projets.some((p) => p
     <div class="wrap">
       <div class="section-head">
         <h2 id="t-projets">Projets</h2>
+        {filtrable && (
         <div class="filters" role="group" aria-label="Filtrer par catégorie" id="filters" hidden>
           <button class="chip" type="button" data-filter="all" aria-pressed="true">Tous</button>
           {present.map(([k, label]) => <button class="chip" type="button" data-filter={k} aria-pressed="false">{label}</button>)}
         </div>
+        )}
       </div>
       <ul class="grid" role="list" id="grid">
         {projets.map((p, i) => (
