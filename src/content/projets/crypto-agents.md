@@ -92,4 +92,20 @@ Voici, sans retouche, une alerte de surveillance reçue le 26 novembre 2026.
 
 Pour le troisième actif, l'outil calcule un ratio gain/risque de 0,4 alors que son propre seuil est à 2 — et il l'écrit. Autrement dit, il présente l'opération et explique dans la même ligne pourquoi elle ne vaut pas la peine d'être tentée.
 
+## La question qui suit
+
+Juste après l'analyse, un second message arrive.
+
+<figure class="recu breve">
+<figcaption><b>Crypto Workflow v5 · signal</b> <span>reçu dans la foulée</span></figcaption>
+<div class="recu-corps">
+<p><b>🔔 Signal MANTRA, MMT, NEAR</b><br />Analyse complète reçue juste au-dessus.</p>
+<p class="recu-demande">Tu suis ce signal ?</p>
+</div>
+</figure>
+
+Trois mots, et c'est pourtant la partie à laquelle je tiens le plus. Un outil d'analyse qui ne demande jamais ce qu'on a fait de ses conseils ne peut jamais être jugé : il produit des avis dans le vide, et seuls les bons restent en mémoire. En posant la question, celui-ci garde trace de l'écart entre ce qu'il a dit et ce que j'ai fait.
+
+C'est la boucle qui manque à la plupart des outils de ce genre. Sans elle, une machine a toujours raison.
+
 Cette alerte est un instantané daté : les prix qu'elle contient étaient ceux du 26 novembre 2026 et n'ont plus aucune valeur aujourd'hui. Elle est ici pour montrer la forme du raisonnement, pas son contenu.
