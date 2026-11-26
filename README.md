@@ -61,6 +61,28 @@ Mets le domaine dans `SITE_URL`, `BASE_PATH: /`, et ajoute un fichier `public/CN
 
 « Encre » : une seule matière, deux encres. En thème clair, encre noire sur papier crème ; en thème sombre, encre crème sur plaque noire. Le grain est une texture de papier en clair, un grain argentique en sombre. Tout est monochrome : ce sont les signes gravés qui portent l'œil.
 
+### Montrer la sortie d'un workflow
+
+Un workflow ne se voit pas. Le bloc `.recu` compose son **vrai message** dans la matière du site, plutôt que d'en coller une capture d'écran de Telegram — qui jurerait avec le monochrome.
+
+À placer directement dans le Markdown d'une fiche :
+
+```html
+<figure class="recu">
+<figcaption><b>Nom du workflow</b> <span>reçu le ..., sur Telegram</span></figcaption>
+<div class="recu-corps">
+  <h4><span class="mk">🎯</span> Un titre de section</h4>
+  <p>Le texte du message.</p>
+  <p class="recu-pari">Une prédiction.<em>Le critère qui la tranchera.</em></p>
+  <p class="recu-coulisses">Coulisses : ce que la machine a lu.</p>
+</div>
+</figure>
+```
+
+Classes disponibles : `recu-src` (mention de source, en petit), `recu-pari` (filet à gauche), `recu-q` (question finale, en sérif), `recu-coulisses` (pied, séparé par un filet). Le contenu s'écrit en HTML, pas en Markdown.
+
+**Reproduire le message sans le retoucher** : c'est sa valeur de preuve. Un exemple complet se trouve dans `src/content/projets/souffle-du-jour.md`.
+
 ### Les matières
 
 Deux textures dans `public/tex/`, en deux versions chacune (claire et sombre) :

@@ -349,6 +349,45 @@
   .facts strong { font-family: var(--font-display); font-size: var(--step-1); font-weight: 400; min-inline-size: 4.5rem; }
   .facts span { color: var(--ink-soft); font-size: var(--step--1); }
 
+  /* --- Un message reçu : la sortie réelle d'un workflow, composée dans la
+         matière du site plutôt que montrée en capture d'écran. --- */
+  .recu {
+    margin: 2rem 0 1.5rem; padding: 0; border: 1px solid var(--rule);
+    border-radius: var(--radius); background: var(--surface); overflow: clip;
+  }
+  .recu figcaption {
+    display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; align-items: baseline;
+    padding: 0.85rem 1.3rem; border-block-end: 1px solid var(--rule);
+    background: var(--surface-2);
+  }
+  .recu figcaption b { font: 500 0.95rem / 1 var(--font-label); letter-spacing: 0.05em; font-weight: 500; }
+  .recu figcaption span { font: 400 0.78rem / 1.4 var(--font-ui); color: var(--ink-soft); }
+  .recu-corps { padding: 1.3rem; font-size: 0.92rem; line-height: 1.6; }
+  .recu-corps > p { margin-block-end: 0.9rem; }
+  .recu-corps > p:last-child { margin-block-end: 0; }
+  .recu-corps h4 {
+    font: 500 0.95rem / 1.2 var(--font-label); letter-spacing: 0.06em;
+    margin-block: 1.5rem 0.6rem; color: var(--ink);
+  }
+  .recu-corps h4:first-child { margin-block-start: 0; }
+  .recu-corps h4 .mk { font-size: 0.85em; opacity: 0.5; margin-inline-end: 0.15em; }
+  .recu-corps ol, .recu-corps ul { padding-inline-start: 1.2rem; margin-block-end: 0.9rem; }
+  .recu-corps li { margin-block-end: 0.7rem; }
+  .recu-corps li b { font-weight: 600; }
+  .recu-corps a { color: var(--ink); text-decoration-color: var(--rule); }
+  .recu-corps a:hover { text-decoration-color: var(--ink); }
+  .recu-src { font-size: 0.78rem; color: var(--ink-soft); }
+  .recu-pari {
+    border-inline-start: 2px solid var(--ink); padding-inline-start: 0.9rem;
+    margin-block-end: 0.9rem;
+  }
+  .recu-pari em { font-style: normal; font-size: 0.8rem; color: var(--ink-soft); display: block; margin-block-start: 0.3rem; }
+  .recu-coulisses {
+    border-block-start: 1px solid var(--rule); margin-block-start: 1.2rem;
+    padding-block-start: 0.8rem; font-size: 0.78rem; color: var(--ink-soft);
+  }
+  .recu-q { font-family: var(--font-display); font-size: 1.1rem; line-height: 1.3; }
+
   /* --- Page projet --- */
   .project-hero { padding-block: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem); }
   .back { display: inline-block; margin-block-end: 1.75rem; font: 500 0.95rem / 1 var(--font-label); letter-spacing: 0.05em; color: var(--ink-soft); text-decoration: none; }
