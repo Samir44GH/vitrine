@@ -28,6 +28,29 @@ C'est le point sur lequel j'ai le plus travaillé, et celui dont je suis le plus
 - **Il refuse de juger ce qu'il ne peut pas juger.** Sans juridiction renseignée, il écrit que l'évaluation réglementaire européenne est impossible, plutôt que d'en bâcler une.
 - **Il dit ce qui le ferait mentir.** Chaque analyse porte un seuil d'invalidation : le prix à partir duquel son scénario est démenti. Comme le pari du soir de mon autre workflow, c'est une façon de rendre une machine réfutable.
 
+## Ce qu'il refuse même d'analyser
+
+Avant toute analyse, un filtre écarte les mouvements qui ne méritent pas qu'on dépense un appel au modèle. Et il le dit, plutôt que de rester silencieux.
+
+<figure class="recu breve">
+<figcaption><b>Mon robot crypto · filtre</b> <span>avant tout appel au modèle</span></figcaption>
+<div class="recu-corps">
+<p><b>🔕 Mouvement écarté sans analyse IA</b> <i>(abstention quasi certaine)</i></p>
+<p>• SOXSB +18,7 % sur 24 h — micro-capitalisation (rang 976)</p>
+<p class="recu-coulisses">Pour l'analyser quand même : <code>/analyse SOXSB</code></p>
+</div>
+</figure>
+
+Trois choses se jouent dans ce petit message.
+
+**Il annonce son propre verdict avant de le produire.** « Abstention quasi certaine » : l'outil sait que sur une micro-capitalisation classée 976<sup>e</sup>, une hausse de 18,7 % ne conclura à rien. Alors il s'arrête là.
+
+**Il économise ce qu'il ne gaspille pas.** Chaque analyse coûte un appel à un modèle. Ne pas le dépenser sur un mouvement illisible, c'est pouvoir le dépenser ailleurs.
+
+**Il me laisse le dernier mot.** Une commande permet de forcer l'analyse. Le filtre est une proposition, pas une porte fermée.
+
+Un outil silencieux sur ce qu'il écarte laisse croire qu'il n'a rien vu. Celui-ci dit ce qu'il a vu, pourquoi il s'abstient, et comment passer outre.
+
 ## Une alerte réelle
 
 Voici, sans retouche, une alerte de surveillance reçue le 26 novembre 2026.
