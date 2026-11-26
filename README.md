@@ -125,7 +125,12 @@ Elle sert à deux endroits : le logotype en haut à gauche (`--font-brand`) et l
 
 Ailleurs, elle n'apparaît pas : une écriture manuscrite utilisée plus d'une fois cesse d'être une signature. Le nom signé se change dans `src/site.ts` (`signature`).
 
-Les signes vivent dans `src/components/Sigil.astro`. Pour en ajouter un, ajoute son dessin SVG dans ce fichier et son nom dans `src/content.config.ts`.
+Les signes vivent dans `src/components/Sigil.astro`. **Deux règles pour en ajouter un :**
+
+- chaque forme tracée porte `pathLength="1"`, ce qui normalise sa longueur et permet de l'animer sans connaître sa taille réelle ;
+- chaque forme pleine porte `class="plein"` : elle ne se trace pas, elle paraît.
+
+Au survol d'une carte, le signe se retrace à la plume, forme après forme. Il est **complet au repos** : l'animation rejoue un dessin déjà visible, elle n'en dévoile pas un caché. Elle est désactivée si le visiteur a demandé moins d'animations. Pour en ajouter un, ajoute son dessin SVG dans ce fichier et son nom dans `src/content.config.ts`.
 
 ## Ce qui est inclus
 

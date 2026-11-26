@@ -316,6 +316,39 @@
   }
   .sigil-svg { inline-size: 100%; }
 
+  /* Le tracé à la plume. Les signes sont COMPLETS au repos : le survol
+     rejoue leur tracé, il ne dévoile pas un dessin caché. */
+  .sigil-svg > * { stroke-dasharray: 1; stroke-dashoffset: 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .card:hover .sigil-svg > *,
+    .suite-lien:hover .sigil-svg > *,
+    .project-head .sigil:hover .sigil-svg > * {
+      animation: tracer 0.75s var(--ease) both;
+    }
+    .card:hover .sigil-svg > *:nth-child(2),
+    .suite-lien:hover .sigil-svg > *:nth-child(2),
+    .project-head .sigil:hover .sigil-svg > *:nth-child(2) { animation-delay: 0.1s; }
+    .card:hover .sigil-svg > *:nth-child(3),
+    .suite-lien:hover .sigil-svg > *:nth-child(3),
+    .project-head .sigil:hover .sigil-svg > *:nth-child(3) { animation-delay: 0.2s; }
+    .card:hover .sigil-svg > *:nth-child(4),
+    .suite-lien:hover .sigil-svg > *:nth-child(4),
+    .project-head .sigil:hover .sigil-svg > *:nth-child(4) { animation-delay: 0.3s; }
+    .card:hover .sigil-svg > *:nth-child(5),
+    .suite-lien:hover .sigil-svg > *:nth-child(5),
+    .project-head .sigil:hover .sigil-svg > *:nth-child(5) { animation-delay: 0.4s; }
+
+    /* Une forme pleine ne se trace pas : elle paraît. */
+    .card:hover .sigil-svg > .plein,
+    .suite-lien:hover .sigil-svg > .plein,
+    .project-head .sigil:hover .sigil-svg > .plein {
+      animation: paraitre 0.75s var(--ease) both;
+    }
+  }
+  @keyframes tracer { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes paraitre { from { opacity: 0; scale: 0.4; } to { opacity: 1; scale: 1; } }
+  .sigil-svg > .plein { transform-box: fill-box; transform-origin: center; }
+
   .card-body { min-inline-size: 0; display: flex; flex-direction: column; gap: 0.35rem; }
   .card .idx {
     font: 500 0.72rem / 1 var(--font-ui); letter-spacing: 0.14em;
