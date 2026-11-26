@@ -20,6 +20,12 @@ C'est le code qui calcule les durées d'attente, retient les trois plus ancienne
 
 C'est la même règle que dans mes autres projets : quand une machine est touchante, il faut qu'elle soit exacte.
 
+## Quand il n'y a rien à dire
+
+Si la table ne contient aucun animal, le workflow envoie un message qui le dit, explique quoi remplir — et **n'appelle pas le modèle du tout**. Il n'y a rien à raconter : inutile de dépenser un appel pour produire une phrase creuse.
+
+Le contrôle des chiffres, lui, tourne quand même, et confirme qu'il n'a rien trouvé à redire.
+
 ## Une contrainte assumée
 
 Aucun refuge ne publie ses pensionnaires par une interface programmable — la plupart passent par leur page Facebook. Les fiches sont donc tenues à la main dans une table, avec une case à décocher le jour de l'adoption plutôt qu'une ligne à supprimer.
