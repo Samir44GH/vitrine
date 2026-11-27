@@ -14,6 +14,13 @@ const filtrable = present.length > 1;
 ---
 <Base>
   <section class="hero">
+    <!-- La marque du site, en filigrane derrière l'ouverture. Purement
+         décorative : masquée aux lecteurs d'écran. -->
+    <svg class="marque" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+      <rect x="40" y="40" width="120" height="120" transform="rotate(13 100 100)" />
+      <rect x="63" y="63" width="74" height="74" transform="rotate(-8 100 100)" />
+      <rect class="plein" x="87" y="87" width="26" height="26" transform="rotate(13 100 100)" />
+    </svg>
     <div class="wrap">
       <span class="kicker">{site.hero.kicker}</span>
       <h1 set:html={site.hero.title} />

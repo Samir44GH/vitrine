@@ -85,6 +85,7 @@
 
     --grain-blend: multiply;
     --grain-opacity: 0.05;
+    --marque-opacity: 0.085;
     --tex-papier: url('../tex/papier.webp');
     --tex-encre: url('../tex/encre.webp');
     --tex-blend: multiply;
@@ -126,6 +127,7 @@
       --sigil-fg: #13110d;
       --grain-blend: screen;
       --grain-opacity: 0.09;
+      --marque-opacity: 0.14;
       --tex-papier: url('../tex/papier-sombre.webp');
       --tex-encre: url('../tex/encre-sombre.webp');
       --tex-blend: screen;
@@ -144,6 +146,7 @@
     --sigil-fg: #13110d;
     --grain-blend: screen;
     --grain-opacity: 0.09;
+    --marque-opacity: 0.14;
     --tex-papier: url('../tex/papier-sombre.webp');
     --tex-encre: url('../tex/encre-sombre.webp');
     --tex-blend: screen;
@@ -292,6 +295,21 @@
     opacity: var(--tex-encre-opacity); mix-blend-mode: var(--tex-blend);
     mask-image: linear-gradient(to bottom, #000 25%, transparent 92%);
   }
+  /* Le filigrane : carrés emboîtés, inclinés. Il reste derrière le texte
+     (z-index négatif dans le contexte isolé de .hero) et ne doit jamais
+     gêner la lecture — d'où une opacité faible, plus haute en thème
+     sombre, où l'encre claire sur fond noir ressort moins. */
+  .marque {
+    position: absolute; z-index: -1; pointer-events: none;
+    inset-block-start: 50%; inset-inline-start: 50%; translate: -50% -50%;
+    inline-size: clamp(15rem, 44vw, 31rem); aspect-ratio: 1;
+    fill: none; stroke: var(--ink); stroke-width: 1.4;
+    opacity: var(--marque-opacity);
+  }
+  /* Le carré plein est le seul aplat du filigrane : derrière une ligne
+     de titre, il se lirait comme une tache. Il est donc atténué. */
+  .marque .plein { fill: var(--ink); stroke: none; opacity: 0.5; }
+
   .hero .kicker { margin-block-end: 1.6rem; }
   .hero h1 { font-size: var(--step-4); max-inline-size: 17ch; margin-inline: auto; }
   .hero h1 em { font-style: italic; }
