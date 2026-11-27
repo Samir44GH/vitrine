@@ -239,8 +239,8 @@
   .nav a {
     /* Une entrée de menu ne se coupe jamais en deux lignes : elle
        décalerait ses voisines vers le haut. Elle rétrécit plutôt. */
-    font: 500 clamp(0.78rem, 0.6rem + 0.55vw, 0.95rem) / 1 var(--font-label);
-    letter-spacing: clamp(0.02em, 0.05vw, 0.05em);
+    font: 500 clamp(0.9rem, 0.72rem + 0.55vw, 1.05rem) / 1 var(--font-display);
+    font-optical-sizing: auto; letter-spacing: 0.005em;
     color: var(--ink-soft); text-decoration: none; white-space: nowrap;
   }
   .nav a:hover { color: var(--ink); }
