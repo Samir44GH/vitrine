@@ -318,8 +318,8 @@
   .marque .plein { fill: var(--ink); stroke: none; opacity: 0.5; }
 
   @media (prefers-reduced-motion: no-preference) {
-    .marque .m-ext { animation: tourner-droite 54s linear infinite; }
-    .marque .m-int { animation: tourner-gauche 38s linear infinite; }
+    .marque .m-ext { animation: tourner-droite 27s linear infinite; }
+    .marque .m-int { animation: tourner-gauche 19s linear infinite; }
   }
   @keyframes tourner-droite { to { rotate: 373deg; } }
   @keyframes tourner-gauche { to { rotate: -368deg; } }
