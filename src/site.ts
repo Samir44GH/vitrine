@@ -17,7 +17,7 @@ export const site = {
 
   // La section qui énonce le fil commun, entre l'accroche et les projets.
   these: {
-    title: 'Une machine doit pouvoir avoir tort',
+    title: 'Mes machines ont le droit de se tromper. Pas de me le cacher.',
     lead: "Un modèle de langage produit des phrases plausibles : c'est son métier, et c'est aussi son danger. Il énonce un chiffre faux avec le même aplomb qu'un chiffre juste. La plupart du travail ci-dessous ne sert pas à rendre ces machines plus intelligentes, mais à les rendre réfutables.",
     preuves: [
       {
