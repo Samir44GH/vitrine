@@ -100,11 +100,13 @@ Pour en changer : repasse ton image par `scripts/prep_texture.py` (passe-haut, a
 
 ### La police des titres
 
-`public/fonts/fraunces-display.woff2` et son italique sont une **Fraunces préparée pour ce site**, fabriquée par `scripts/fraunces.py` à partir du fichier complet du paquet.
+`public/fonts/titre.woff2` est une **Source Serif 4 préparée pour ce site** par `scripts/titre.py`, réduite au français. Elle sert à tout ce qui porte `--font-display` : l'accroche, les titres de section, les titres de fiche — et aussi les trois mentions de la colonne « À propos », pour que le bloc tienne d'une seule voix.
 
-Deux axes y sont figés : **WONK à 0**, qui supprime les lettres excentriques de la police — dont un J très tordu, peu lisible en titre — et SOFT à 0. La taille optique reste variable, et `font-optical-sizing: auto` laisse le navigateur l'ajuster au corps réel de chaque texte.
+Elle garde ses deux axes, la graisse et la **taille optique**. `font-optical-sizing: auto` laisse le navigateur ajuster le dessin au corps réel : le même fichier donne donc des titres de 50 px ouverts et des étiquettes de 16 px plus robustes.
 
-Le paquet `@fontsource-variable/fraunces` n'est plus installé : son fichier n'exposait que la graisse, ce qui rendait la taille optique inopérante, ne permettait pas de couper WONK, et laissait le navigateur fabriquer une fausse italique.
+`titre-italic.woff2` ne sert qu'à un mot de l'accroche. Il est donc **figé** sur une seule taille optique et une seule graisse : 12 Ko au lieu de 85.
+
+Pour changer de police de titre, refaire tourner `scripts/titre.py` sur le fichier variable voulu et remplacer les deux `.woff2`, sans toucher au CSS. Copier la licence à côté.
 
 ### Les étiquettes
 
