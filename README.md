@@ -98,6 +98,18 @@ Deux textures dans `public/tex/`, en deux versions chacune (claire et sombre) :
 
 Pour en changer : repasse ton image par `scripts/prep_texture.py` (passe-haut, amplitude douce, raccords fondus), sinon elle assombrira la page et sa mosaïque se verra. Le réglage se fait par les variables `--tex-*` en haut de `global.css`.
 
+### L'image de partage
+
+`public/og.png` est l'aperçu affiché quand le lien du site est envoyé sur une messagerie ou un réseau social. Elle n'est pas dessinée à la main : `scripts/og.mjs` la refabrique **à chaque construction**, parce qu'elle affiche le nombre de projets et que ce nombre doit suivre le contenu tout seul. Ajouter ou retirer une fiche dans `src/content/projets/` suffit.
+
+Le script est branché sur `prebuild` dans `package.json` : il tourne avant Astro, sans rien à lancer à la main.
+
+Le rendu passe par `resvg`, qui lit des polices **TTF** et non des WOFF2. Les fichiers de `scripts/polices/` sont les mêmes polices que celles du site, simplement converties — ils ne sont jamais envoyés au navigateur. Pour en régénérer une après un changement de police :
+
+```
+python3 -c "from fontTools.ttLib import TTFont; f=TTFont('public/fonts/titre.woff2'); f.flavor=None; f.save('scripts/polices/titre.ttf')"
+```
+
 ### Le filigrane de l'ouverture
 
 Les carrés emboîtés derrière le titre d'accueil (`.marque`, dans `src/pages/index.astro`) sont **trois SVG empilés**, et non trois formes dans un même SVG. La raison est technique : la rotation d'un élément entier est confiée au compositeur du navigateur, alors que celle d'une forme *à l'intérieur* d'un SVG oblige à redessiner toute l'ouverture à chaque image.

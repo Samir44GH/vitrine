@@ -7,6 +7,9 @@ interface Props { title?: string; description?: string }
 const { title, description = site.description } = Astro.props;
 const fullTitle = title ? `${title} · ${site.name}` : `${site.name} · Projets`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+// L'aperçu affiché quand le lien est partagé. L'image est refaite à chaque
+// construction par scripts/og.mjs : le nombre de projets y suit le contenu.
+const apercu = new URL(url('og.png'), Astro.site);
 ---
 <!doctype html>
 <html lang={site.lang}>
@@ -20,6 +23,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={apercu} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Mes machines ont le droit de se tromper. Pas de me le cacher." />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#16130e" />
     <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
     <script is:inline>
