@@ -36,6 +36,40 @@ C'est le garde-fou dont je suis le plus satisfait. Il ne demande pas au modèle 
 
 **Pas de prix dans les menus.** Un total de courses calculé par une IA serait inventé. Le budget sert de consigne, pas de calcul.
 
+## Un message réel
+
+Voici, sans retouche, les deux messages reçus le vendredi 27 novembre 2026 à la demande. Le profil du foyer tenait en une phrase : trois adultes, cent euros par semaine.
+
+<figure class="recu">
+<figcaption><b>Paperasse · Repas</b> <span>reçu le vendredi 27 novembre 2026, sur Telegram</span></figcaption>
+<div class="recu-corps">
+<h4><span class="mk">🍽</span> Tes menus de la semaine</h4>
+<p><b>Lundi</b><br />midi : Soupe de courge et tartines fromagées<br />soir : Omelette aux champignons et salade</p>
+<p><b>Mardi</b><br />midi : Salade de lentilles et œufs durs<br />soir : Pâtes au thon et tomates</p>
+<p><b>Mercredi</b><br />midi : Restes de pâtes au thon<br />soir : Poulet rôti, carottes et pommes de terre</p>
+<p><b>Jeudi</b><br />midi : Salade poulet, lentilles et carottes<br />soir : Soupe poireaux-pommes de terre et croques</p>
+<p><b>Vendredi</b><br />midi : Restes de soupe et croque-monsieur<br />soir : Poisson pané, purée et salade verte</p>
+<p><b>Samedi</b><br />midi : Gratin de pâtes, courge et fromage<br />soir : Chili con carne aux haricots rouges</p>
+<p><b>Dimanche</b><br />midi : Rôti de porc, pommes et chou<br />soir : Hachis parmentier au porc et purée</p>
+<p><span class="mk">💡</span> Achetez les légumes de saison en gros et transformez le poulet et le rôti en salades puis en hachis pour deux repas.</p>
+<p class="recu-avert">Menus proposés par une IA : en cas d'allergie, vérifie chaque ingrédient.</p>
+
+<h4><span class="mk">🛒</span> La liste de courses</h4>
+<p><b>Fruits et légumes</b><br />courge butternut · carottes · pommes de terre · poireaux · oignons · salade verte · champignons de Paris · pommes · chou vert · ail</p>
+<p><b>Boucherie et poisson</b><br />poulet entier · viande hachée · rôti de porc · jambon blanc</p>
+<p><b>Crèmerie</b><br />œufs · lait · fromage râpé · fromage en tranches · crème fraîche</p>
+<p><b>Épicerie</b><br />pâtes · riz · lentilles vertes · tomates concassées · haricots rouges · thon au naturel · bouillon cubes · vinaigre</p>
+<p><b>Surgelés</b><br />filets de poisson pané</p>
+<p><b>Boulangerie</b><br />pain · pain de mie</p>
+</div>
+</figure>
+
+Deux choses à remarquer dans ce message.
+
+**Il n'y a aucun prix.** Ni par article, ni en total. C'était la règle posée au départ : un total de courses calculé par un modèle de langage serait inventé de bout en bout. Le budget sert de contrainte à la composition des menus, jamais de calcul affiché.
+
+**Les restes sont planifiés.** Le poulet du mercredi soir revient en salade le jeudi midi, la soupe du jeudi soir en déjeuner du vendredi, et le rôti du dimanche midi en hachis le soir. C'est ce qui fait tenir la semaine dans le budget, et ça vient de la consigne, pas du hasard.
+
 ## Ce qui n'est pas gardé
 
 Les exécutions réussies ne sont pas enregistrées dans n8n : elles contiendraient le texte des courriers. Les photos ne sont jamais copiées sur le serveur — elles restent dans la conversation Telegram, et le bot retrouve l'original en citant le message d'origine.
