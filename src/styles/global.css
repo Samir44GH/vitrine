@@ -231,14 +231,17 @@
   .brand {
     /* Écriture liée : pas de crénage négatif, il casserait les attaches. */
     font-family: var(--font-brand), var(--font-display);
-    font-size: clamp(2rem, 1.7rem + 1.1vw, 2.45rem);
+    font-size: clamp(1.75rem, 1.35rem + 1.5vw, 2.45rem);
     line-height: 1.1; letter-spacing: 0; text-decoration: none;
     display: inline-block; padding-block-start: 0.1em;
   }
-  .nav { display: flex; align-items: center; gap: clamp(0.6rem, 2.5vw, 1.6rem); }
+  .nav { display: flex; align-items: center; gap: clamp(0.5rem, 2.2vw, 1.6rem); }
   .nav a {
-    font: 500 0.95rem / 1 var(--font-label); letter-spacing: 0.05em;
-    color: var(--ink-soft); text-decoration: none;
+    /* Une entrée de menu ne se coupe jamais en deux lignes : elle
+       décalerait ses voisines vers le haut. Elle rétrécit plutôt. */
+    font: 500 clamp(0.78rem, 0.6rem + 0.55vw, 0.95rem) / 1 var(--font-label);
+    letter-spacing: clamp(0.02em, 0.05vw, 0.05em);
+    color: var(--ink-soft); text-decoration: none; white-space: nowrap;
   }
   .nav a:hover { color: var(--ink); }
 
