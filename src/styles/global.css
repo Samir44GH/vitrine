@@ -226,7 +226,7 @@
   }
   .site-header .wrap {
     display: flex; align-items: center; justify-content: space-between;
-    gap: 1rem; min-height: 3.75rem;
+    gap: clamp(1.4rem, 5vw, 2.5rem); min-height: 3.75rem;
   }
   .brand {
     /* Écriture liée : pas de crénage négatif, il casserait les attaches. */
@@ -235,11 +235,11 @@
     line-height: 1.1; letter-spacing: 0; text-decoration: none;
     display: inline-block; padding-block-start: 0.1em;
   }
-  .nav { display: flex; align-items: center; gap: clamp(0.5rem, 2.2vw, 1.6rem); }
+  .nav { display: flex; align-items: center; gap: clamp(0.65rem, 2.6vw, 1.6rem); }
   .nav a {
     /* Une entrée de menu ne se coupe jamais en deux lignes : elle
        décalerait ses voisines vers le haut. Elle rétrécit plutôt. */
-    font: 500 clamp(0.9rem, 0.72rem + 0.55vw, 1.05rem) / 1 var(--font-display);
+    font: 500 clamp(0.8rem, 0.66rem + 0.45vw, 0.98rem) / 1 var(--font-display);
     font-optical-sizing: auto; letter-spacing: 0.005em;
     color: var(--ink-soft); text-decoration: none; white-space: nowrap;
   }
