@@ -9,7 +9,8 @@
 export type SigilName =
   | 'barres' | 'cercles' | 'rayons' | 'vague'
   | 'trame' | 'chevrons' | 'losange' | 'grille'
-  | 'lueur' | 'refuge' | 'aube';
+  | 'lueur' | 'refuge' | 'aube'
+  | 'boucle' | 'faisceau';
 
 interface Props { name: SigilName; class?: string }
 const { name, class: cls = '' } = Astro.props;
@@ -23,6 +24,10 @@ const paths: Record<SigilName, string> = {
   chevrons: '<path pathLength="1" d="m8 18 16-10 16 10"/><path pathLength="1" d="m8 28 16-10 16 10" opacity=".6"/><path pathLength="1" d="m8 38 16-10 16 10" opacity=".3"/>',
   losange: '<rect pathLength="1" x="11" y="11" width="26" height="26" transform="rotate(45 24 24)"/><circle class="plein" cx="24" cy="24" r="5" fill="currentColor" stroke="none"/>',
   grille: '<rect pathLength="1" x="7" y="7" width="34" height="34" rx="2"/><path pathLength="1" d="M24 7v34M7 24h34"/>',
+  // Une boucle : le trait qui revient sur lui-même, et la marque qu'il corrige
+  boucle: '<path pathLength="1" d="M38 18.5A16 16 0 1 0 40 26"/><path pathLength="1" d="M31 17h8V9"/><circle class="plein" cx="24" cy="26" r="4" fill="currentColor" stroke="none"/>',
+  // Un faisceau : plusieurs sources qui convergent en un seul point
+  faisceau: '<path pathLength="1" d="M7 9 24 30M18 7l6 23M30 7l-6 23M41 9 24 30"/><path pathLength="1" d="M13 39h22" opacity=".5"/><circle class="plein" cx="24" cy="33" r="3.6" fill="currentColor" stroke="none"/>',
   // Une lueur : le point et son halo rompu
   lueur: '<circle class="plein" cx="24" cy="24" r="5" fill="currentColor" stroke="none"/><path pathLength="1" d="M24 8.5a15.5 15.5 0 0 1 13.4 7.7"/><path pathLength="1" d="M37.4 31.8A15.5 15.5 0 0 1 24 39.5"/><path pathLength="1" d="M10.6 31.8A15.5 15.5 0 0 1 10.6 16.2"/>',
   // Un refuge : l'abri et ce qui attend dessous

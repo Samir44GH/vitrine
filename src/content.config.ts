@@ -13,7 +13,7 @@ const projets = defineCollection({
     status: z.enum(['en-ligne', 'en-cours', 'archive']).default('en-ligne'),
     stack: z.array(z.string()).default([]),
     // Signe gravé du projet — voir src/components/Sigil.astro
-    sigil: z.enum(['barres', 'cercles', 'rayons', 'vague', 'trame', 'chevrons', 'losange', 'grille', 'lueur', 'refuge', 'aube']).default('grille'),
+    sigil: z.enum(['barres', 'cercles', 'rayons', 'vague', 'trame', 'chevrons', 'losange', 'grille', 'lueur', 'refuge', 'aube', 'boucle', 'faisceau']).default('grille'),
     featured: z.boolean().default(false),
     order: z.number().default(100),
     links: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
