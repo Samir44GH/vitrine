@@ -102,7 +102,7 @@ Pour en changer : repasse ton image par `scripts/prep_texture.py` (passe-haut, a
 
 Les carrés emboîtés derrière le titre d'accueil (`.marque`, dans `src/pages/index.astro`) sont **trois SVG empilés**, et non trois formes dans un même SVG. La raison est technique : la rotation d'un élément entier est confiée au compositeur du navigateur, alors que celle d'une forme *à l'intérieur* d'un SVG oblige à redessiner toute l'ouverture à chaque image.
 
-Le carré extérieur tourne dans un sens (27 s par tour), l'intérieur dans l'autre (19 s), et le carré plein du centre ne tourne pas. Les deux rotations s'arrêtent pour qui a demandé moins d'animations dans son système.
+Le carré extérieur tourne dans un sens (18 s par tour), l'intérieur dans l'autre (12,7 s), et le carré plein du centre ne tourne pas. Les deux rotations s'arrêtent pour qui a demandé moins d'animations dans son système.
 
 L'opacité se règle par `--marque-opacity`, plus haute en thème sombre : l'encre claire sur fond noir ressort moins que l'inverse.
 
