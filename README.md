@@ -98,6 +98,14 @@ Deux textures dans `public/tex/`, en deux versions chacune (claire et sombre) :
 
 Pour en changer : repasse ton image par `scripts/prep_texture.py` (passe-haut, amplitude douce, raccords fondus), sinon elle assombrira la page et sa mosaïque se verra. Le réglage se fait par les variables `--tex-*` en haut de `global.css`.
 
+### Le filigrane de l'ouverture
+
+Les carrés emboîtés derrière le titre d'accueil (`.marque`, dans `src/pages/index.astro`) sont **trois SVG empilés**, et non trois formes dans un même SVG. La raison est technique : la rotation d'un élément entier est confiée au compositeur du navigateur, alors que celle d'une forme *à l'intérieur* d'un SVG oblige à redessiner toute l'ouverture à chaque image.
+
+Le carré extérieur tourne dans un sens (54 s par tour), l'intérieur dans l'autre (38 s), et le carré plein du centre ne tourne pas. Les deux rotations s'arrêtent pour qui a demandé moins d'animations dans son système.
+
+L'opacité se règle par `--marque-opacity`, plus haute en thème sombre : l'encre claire sur fond noir ressort moins que l'inverse.
+
 ### La police des titres
 
 `public/fonts/titre.woff2` est une **Source Serif 4 préparée pour ce site** par `scripts/titre.py`, réduite au français. Elle sert à tout ce qui porte `--font-display` : l'accroche, les titres de section, les titres de fiche — et aussi les trois mentions de la colonne « À propos », pour que le bloc tienne d'une seule voix.

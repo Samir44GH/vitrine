@@ -295,20 +295,34 @@
     opacity: var(--tex-encre-opacity); mix-blend-mode: var(--tex-blend);
     mask-image: linear-gradient(to bottom, #000 25%, transparent 92%);
   }
-  /* Le filigrane : carrés emboîtés, inclinés. Il reste derrière le texte
-     (z-index négatif dans le contexte isolé de .hero) et ne doit jamais
-     gêner la lecture — d'où une opacité faible, plus haute en thème
-     sombre, où l'encre claire sur fond noir ressort moins. */
+  /* Le filigrane : deux carrés qui tournent en sens inverse autour d'un
+     carré plein immobile. Il reste derrière le texte (z-index négatif
+     dans le contexte isolé de .hero) et ne doit jamais gêner la lecture —
+     d'où une opacité faible, plus haute en thème sombre, où l'encre
+     claire sur fond noir ressort moins. */
   .marque {
     position: absolute; z-index: -1; pointer-events: none;
     inset-block-start: 50%; inset-inline-start: 50%; translate: -50% -50%;
     inline-size: clamp(15rem, 44vw, 31rem); aspect-ratio: 1;
-    fill: none; stroke: var(--ink); stroke-width: 1.4;
     opacity: var(--marque-opacity);
   }
+  .marque svg {
+    position: absolute; inset: 0; inline-size: 100%; block-size: 100%;
+    fill: none; stroke: var(--ink); stroke-width: 1.4;
+  }
+  .marque .m-ext { rotate: 13deg; }
+  .marque .m-int { rotate: -8deg; }
   /* Le carré plein est le seul aplat du filigrane : derrière une ligne
-     de titre, il se lirait comme une tache. Il est donc atténué. */
+     de titre, il se lirait comme une tache. Il est donc atténué, et il
+     ne tourne pas — c'est le point fixe autour duquel le reste pivote. */
   .marque .plein { fill: var(--ink); stroke: none; opacity: 0.5; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .marque .m-ext { animation: tourner-droite 54s linear infinite; }
+    .marque .m-int { animation: tourner-gauche 38s linear infinite; }
+  }
+  @keyframes tourner-droite { to { rotate: 373deg; } }
+  @keyframes tourner-gauche { to { rotate: -368deg; } }
 
   .hero .kicker { margin-block-end: 1.6rem; }
   .hero h1 { font-size: var(--step-4); max-inline-size: 17ch; margin-inline: auto; }
