@@ -55,3 +55,46 @@ Il ne mesure pas non plus si sa proposition améliore réellement le bot. Ça, c
 En dessous de deux signaux faux sur vingt-huit jours, aucun appel au modèle n'est déclenché : un message court suffit. Beaucoup de dimanches passeront sans aucune proposition, et c'est le comportement attendu.
 
 Un outil de ce genre qui trouverait quelque chose à corriger chaque semaine ne serait pas vigilant : il serait bavard.
+
+## Un message réel
+
+Voici, sans retouche, le bilan reçu le vendredi 27 novembre 2026, lancé à la main hors de son dimanche.
+
+<figure class="recu">
+<figcaption><b>L'Entraîneur</b> <span>reçu le vendredi 27 novembre 2026, sur Telegram</span></figcaption>
+<div class="recu-corps">
+<h4><span class="mk">🏋️</span> Bilan de la semaine</h4>
+<p>Période : signaux clos sur 28 jours · règle corrigée du BTC (±2 %)<br />
+Signaux : <b>16</b> sur 12 jours distincts · ✅ 12 · ❌ 3 · ➖ 1 · réussite 80 %<br />
+Par confiance : moyenne 8✅/1❌ · faible 3✅/2❌ · forte 1✅/0❌</p>
+
+<p><b>Ce que j'ai vu dans les rapports faux</b></p>
+<ul>
+<li>FAUX 2 et FAUX 3 : type « Marché entier » avec scénario BAISSIER directionnel.</li>
+<li>JUSTE 3 : type « Marché entier amplifié » avec bêta 2,12, directionnel justifié, donc le trait n'est pas écarté.</li>
+<li>FAUX 3 : la ligne Contre contient des arguments baissiers, pas de contre-arguments.</li>
+</ul>
+
+<p><b>Cause qui se répète</b> : scénario directionnel BAISSIER émis alors que la nature du mouvement est « Marché entier » sans bêta marquée, dans FAUX 2 et FAUX 3.</p>
+
+<p><b>Proposition (ajout dans MÉTHODE)</b><br />
+<code>Si la nature du mouvement est « Marché entier » et que la bêta fournie est absente ou inférieure à 1,5, le scénario doit être NEUTRE ou ABSTENTION, jamais BAISSIER ni HAUSSIER.</code></p>
+
+<p><b>Pourquoi</b> : empêcher un pari directionnel quand l'actif suit le marché sans amplification marquée.<br />
+<b>Risque</b> : avec 3 faux seulement, hypothèse fragile ; la règle pourrait neutraliser des signaux baissiers justes sur marché entier.<br />
+<b>À surveiller dans le banc</b> : les prochains rapports de type Marché entier sans bêta ≥ 1,5 devraient afficher NEUTRE ou ABSTENTION ; trop d'abstentions signalerait un excès de prudence.</p>
+
+<p class="recu-avert">Rien n'est modifié dans ton bot. Réponds à la question suivante pour garder ou jeter cette idée.</p>
+
+<h4><span class="mk">✅</span> Après validation</h4>
+<p>Proposition gardée. Pour la tester : colle le texte proposé dans la version B du nœud « Prompts à comparer » du banc d'essai, puis lance un rejeu. <b>Elle n'entre dans le bot qu'après un résultat favorable.</b></p>
+</div>
+</figure>
+
+Trois choses se voient dans ce message.
+
+**Le groupe témoin a fonctionné.** Le deuxième constat ne parle pas d'un rapport faux mais d'un rapport **juste** : le même trait y apparaît, mais avec une bêta de 2,12 qui justifiait le pari directionnel. La piste n'est pas abandonnée pour autant — elle est restreinte aux cas sans amplification. C'est exactement ce que le détour par les réussites sert à produire.
+
+**La machine signale sa propre fragilité.** « Avec 3 faux seulement, hypothèse fragile. » Personne ne lui a demandé cette phrase pour ce cas précis : la consigne lui impose de remplir un champ « risque », et elle y écrit ce qui affaiblit sa propre proposition.
+
+**Et le dernier mot n'est pas le sien.** Proposition gardée, mais gardée pour être testée — pas appliquée. Entre l'idée et la production, il reste un banc d'essai et un résultat à obtenir.

@@ -41,3 +41,30 @@ C'est ce qui permet de le lancer à tout moment sans aucun risque, et ce qui fai
 Chaque chiffre vient d'un workflow distinct, et chacun peut être en panne. Plutôt que d'afficher un zéro — qui se lirait comme un vrai zéro — la ligne concernée affiche **« indisponible »**, et l'erreur reste consultable dans l'exécution.
 
 La distinction compte : « zéro erreur cette semaine » et « je n'ai pas réussi à compter les erreurs » sont deux informations opposées, et une synthèse qui les confondrait serait pire que pas de synthèse du tout.
+
+## Un extrait réel
+
+Contrairement aux autres fiches de ce site, ce message est **un extrait, pas le message entier**. Le Conseil rassemble l'état de toute l'installation : son message contient des dépenses, le contenu du registre d'actions et l'avancement d'un travail d'écriture. Rien de tout cela n'a sa place sur une page publique. Ce qui suit est le reste, mot pour mot.
+
+<figure class="recu">
+<figcaption><b>Le Conseil du dimanche</b> <span>extrait du message reçu le vendredi 27 novembre 2026</span></figcaption>
+<div class="recu-corps">
+<h4><span class="mk">🏛️</span> Le Conseil du dimanche</h4>
+<p>📈 Bot crypto : 24 signaux · ✅ 0 ❌ 0 ➖ 0<br />
+🛠️ Système : 0 alerte d'erreur<br />
+📰 Veille : 7 nouveautés</p>
+
+<p><b>Ce que la semaine a appris</b></p>
+<ul>
+<li>Le bot crypto a émis 24 signaux cette semaine, sans bilan 7 j encore disponible ; il manque 6 signaux mesurés pour atteindre le seuil de 30 et pouvoir juger.</li>
+</ul>
+
+<p><span class="mk">🚫</span> <b>À laisser de côté</b> : ne pas modifier le prompt du bot crypto sur la base des 24 signaux de la semaine : il manque 6 signaux mesurés pour atteindre le seuil de 30.</p>
+</div>
+</figure>
+
+C'est la barrière statistique en train de fonctionner, et c'est pour cette raison que je montre cet extrait plutôt qu'un autre.
+
+Vingt-quatre signaux, c'est largement assez pour qu'un modèle de langage trouve une tendance, la commente avec aplomb et recommande une correction. La consigne le lui interdit en dessous de trente. Alors il ne conclut pas, il **dit combien il en manque**, et il consacre son unique conseil négatif à prévenir qu'il ne faut rien changer cette semaine.
+
+Une machine qui réclame plus de données avant de se prononcer est plus utile qu'une machine qui a toujours un avis.
