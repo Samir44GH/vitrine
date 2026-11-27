@@ -3,7 +3,7 @@ title: "Paperasse"
 summary: "Un seul bot Telegram pour six corvées du quotidien : papiers, échéances, dépenses, prix, repas, briefing du matin."
 year: 2026
 category: automatisation
-status: en-cours
+status: en-ligne
 stack: [n8n, Telegram, DeepSeek, Data Tables, Open-Meteo]
 sigil: chevrons
 featured: true
